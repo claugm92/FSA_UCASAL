@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="inicio.aspx.cs" Inherits="inicio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="inicio.aspx.cs" Inherits="Challenge" %>
 
 <!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
 <link href="StyleInicio.css" rel="stylesheet" />
@@ -328,7 +328,7 @@ i.fa.fa-heart {}
     elements.app.addClass("gameover");
     elements.output.html("<i class='fa fa-wheelchair'></i> GAME OVER");
     elements.input.attr("disabled", 1);
-    elements.input.attr("placeholder", "Refresh to play");
+    elements.input.attr("placeholder", "Refresca para volver a jugar");
     cache.result = Math.random();
   };
 
