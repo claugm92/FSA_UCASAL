@@ -126,7 +126,7 @@ i.fa.fa-heart {}
     
     <div class="row">
       <div class="twelve columns">
-        <h1 class="equation">Math Challenge</h1>
+        <h1 class="equation">VIEJITOS PIOLAS CHALLENGE</h1>
       </div>
     </div>
 
