@@ -328,7 +328,7 @@ i.fa.fa-heart {}
     elements.app.addClass("gameover");
     elements.output.html("<i class='fa fa-wheelchair'></i> GAME OVER");
     elements.input.attr("disabled", 1);
-    elements.input.attr("placeholder", "Refresca para volver a jugar");
+    elements.input.attr("placeholder", "Actualiza la pag para volver a jugar");
     cache.result = Math.random();
   };
 
