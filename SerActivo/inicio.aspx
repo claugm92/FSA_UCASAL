@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="inicio.aspx.cs" Inherits="Challenge" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="inicio.aspx.cs" Inherits="inicio" %>
 
 <!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
 <link href="StyleInicio.css" rel="stylesheet" />

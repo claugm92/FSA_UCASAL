@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700);
+
+@charset "utf-8";body{font-family:"Helvetica" !important;font-size:16px !important;letter-spacing:1px;}
+
+body{font-family: 'Work Sans' !important}
+p{font-size:16
+	px !important; font-family:'Work Sans' !important;}
+h2{font-family:"Work Sans" !important;font-size:24px !important;font-weight:bold}
+nav{font-family:"Work Sans" !important;height:120px !important;background-color:#fff !important;}
+.navbar-default .nav{height:80px;}
+.navbar-default .nav > li{margin-top:72px;margin-left:24px;margin-right:24px;}
+.navbar-default .nav > li>a{color:#000 !important;font-weight:normal !important}
+.navbar-default .nav > li > a:active{color:#a00 !important;font-weight:normal !important}
+.navbar-collapse{background-color:rgba(255, 255, 255, 1)}
+.spacer{height:30px}
+.logo{height:90px;width:120px;}
+.barra{cursor:default}
+.navbar-brand{margin-left:36px !important}
+.contenedorPrincipal{width:1200px !important}
+.primeraImg{margin-top:120px}
+.parallax-container, section{height:500px;}
+.parallax img{height:auto;width:100%;}
+.btn-primary{border:3px solid #a1a1a1 !important;background-color:transparent !important;}
+.bg-green{color:#fff;background-color:#079d79 !important;margin-top:15px}
+.bg-green .section-heading{color:#c3d25d !important;float:left;margin-bottom:0px}
+
+
+
+.bg-blue{color:#fff;background-color:#283b46 !important;margin-top:15px}
+.bg-blue .section-heading{float:left;margin-bottom:0px}
+.bg-blue h2{cursor:pointer;margin-bottom:0 !important;}
+.bg-blue .hrTitulo{margin:20px 0 !important;width:120px !important;border-color:#079d79 !important}
+
+
+.bg-white{color:#283b46 !important;background-color:#FFF !important;margin-top:15px}
+.bg-white .section-heading{float:left;margin-bottom:0px}
+.bg-white h2{cursor:pointer;margin-bottom:0 !important;}
+.bg-white .hrTitulo{margin:20px 0 !important;width:120px !important;}
+
+
+.bg-grey{color:#fff;background-color:#c3d35d !important;margin-top:15px}
+.bg-grey .section-heading{color:#283b46 !important;float:left;margin-bottom:0px}
+.bg-grey .titulo{float:right !important;}
+.bg-grey .hrTitulo{margin-top:20px;border-color:#283b46 !important;width:60% !important}
+.bg-grey p{margin-bottom:5px !important}
+.bg-green-2{color:#fff;background-color:#808080 !important;margin-top:15px}
+.bg-green-2 .section-heading{color:#c3d35d !important;float:left;margin-bottom:0px}
+.bg-green-2 p{margin-bottom:5px !important}
+.bg-green-2 span.title{margin-bottom:5px !important;color:#c3d35d !important;}
+.fa{font-size:15px !important}
+.fa-file-text{font-size:48px !important;color:#283B46 !important;margin:20px 0 0 55px}
+.fa-hand-paper-o{font-size:48px !important;color:#C3D35D !important;margin:20px 0 0 55px}
+nav .fa-facebook{height:30px;width:30px;line-height:30px;text-align:center;border-radius:50px;background-color:#00a174;color:#FFF;margin:0px 10px 0px 0px;}
+nav .fa-linkedin{height:30px;width:30px;line-height:30px;text-align:center;border-radius:50px;background-color:#7ab964;color:#FFF;margin:0px 10px 0px 0px;}
+nav .fa-youtube-play{height:30px;width:30px;line-height:30px;text-align:center;border-radius:50px;background-color:#c3d35d;color:#FFF;margin:0px 0px 0px 0px;}
+#socialDiv{position:relative;top:-20px;left:975px;width:130px;z-index:9999;padding-top:0px !important;background-color:#283B46;;height:30px}
+#contacto{color:#FFF;width:100%;background-color:#283B46;padding:20px 0px 20px 0px}
+#contacto strong{color:#00a174;}
+#contacto strong.blanco{color:#FFF;}
+#contacto .fa-facebook{height:30px;width:30px;line-height:30px;text-align:center;border-radius:50px;background-color:#00a174;color:#283B46;margin:10px 10px 0px 0px;}
+#contacto .fa-linkedin{height:30px;width:30px;line-height:30px;text-align:center;border-radius:50px;background-color:#7ab964;color:#283B46;margin:10px 10px 0px 0px;}
+#contacto .fa-youtube-play{height:30px;width:30px;line-height:30px;text-align:center;border-radius:50px;background-color:#c3d35d;color:#283B46;margin:10px 10px 0px 0px;}
+hr{max-width:500px !important;border-color:#fff !important;border-width:0.5px !important;margin-left:0;margin-top:0}
+.hrTitulo{line-height:50%;width:50%}
+.listaMision{padding-left:0}
+.tituloHacemos{font-size:20px !important;font-weight:bold;}
+.espacioHacemos{display:none;}
+.fa-quote-left{font-size:22px !important}
+.espacioColab{display:none}
+.integrantesEquipo p{padding-left:18px}
+.bannerGris2{color:#fff;font-size:30px;position:relative;float:left;line-height:30px;top:-215px;left:353px;width:840px;padding:20px;padding-right:50px;background-color:rgba(194, 209, 101, 0.8);}
+.bannerVerdeClaro{color:#fff;font-size:30px;position:relative;float:left;line-height:30px;top:-215px;left:353px;width:840px;padding:20px;padding-right:50px;background-color:rgba(194, 209, 101, 0.8);}
+.cuerpoVerdeClaro{position:relative;top:-100px !important;overflow:hidden}
+.bannerVerdeOscuro{color:#fff;font-size:30px;position:relative;float:left;left:-25px;line-height:30px;top:-215px;width:840px;padding:20px;padding-left:90px;background-color:rgba(7, 152, 111, 0.8);}
+.cuerpoVerdeOscuro{position:relative;top:-100px !important;overflow:hidden}
+.PrimerBannerNegro{color:#fff;font-size:30px;position:relative;float:left;line-height:30px;top:-215px;left:353px;width:840px;padding:20px;padding-right:50px;background-color:rgba(40, 59, 70, 0.8);}
+.bannerNegro{color:#fff;font-size:30px;position:relative;float:left;line-height:30px;top:-150px;left:353px;width:840px;padding:20px;padding-right:50px;background-color:rgba(40, 59, 70, 0.8);}
+.cuerpoNegro{position:relative;top:-100px !important;overflow:hidden}
+.cuerpoGris{position:relative;top:-100px !important;overflow:hidden}
+.columnaIzquierda{padding-left:70px;}
+.sectionContent{padding-right:70px;}
+.sectionContent p{line-height:16px;}
+.bordeDerecho{border-right:1px dashed #FFF}
+@media (max-width:768px){
+section{height:auto !important; margin-bottom: 0 !important}
+.barra{display:none !important}
+.contenedorPrincipal{width:100% !important}
+.sectionContent{padding:15px !important}
+.sectionContent ul{padding:15px !important}
+.section-heading{padding-top: 50px;margin-bottom:15px !important}
+.navbar-default .nav{margin-top:20% !important}
+.navbar-default .nav > li{margin-top:0 !important}
+.navbar-default .nav > li>a:hover{background-color:#ccc}
+.navbar-collapse{margin-top:0 !important;height:300px !important}
+.navbar-default .nav{margin-top:20px !important}
+.bannerVerdeClaro{float:left;width:100%;top:120px;font-size:16px}
+.bannerVerdeOscuro{width:100%;top:120px;font-size:16px}
+.bannerNegro{float:left;width:100%;top:120px;font-size:16px}
+.bannerGris{width:100%;top:120px;font-size:16px}
+.espacioHacemos{display:block;}
+.integrantesEquipo{padding:0 15px}
+.integrantesEquipo p{padding:0 !important}
+.redes{margin-left:40px !important}
+.espacioColab{display:block}
+.parallax-container{height:200px !important}
+.footerMobile{padding:20px !important}
+.cuerpoVerdeClaro,.cuerpoGris,.cuerpoNegro{position:relative;top:-140px !important;clear:both !important;}
+}
+
+
+
+.cont-proyectos {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 10px
+}
