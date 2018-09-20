@@ -1,0 +1,17 @@
+﻿
+legend {
+    font-weight: bold; 
+    background-color: #c3d35d;
+    font-family: "Work Sans";
+    font-size: 30px;
+}
+
+fieldset {
+    border: 2px #ccc; /* Borde */
+    color: #000; /* Color del texto de todo el contenido */
+}
+
+input:focus {
+    border: 2px solid #000;
+    background: #F3F3F3;
+}

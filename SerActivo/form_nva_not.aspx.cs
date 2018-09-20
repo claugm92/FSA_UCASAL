@@ -39,8 +39,7 @@ public partial class form_nva_not : System.Web.UI.Page
     }
 
 
-
-    protected void btnUpload_Click(object sender, EventArgs e)
+    protected void btnUploadClick(object sender, EventArgs e)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
         using (SqlConnection con = new SqlConnection(connectionString))
@@ -61,19 +60,37 @@ public partial class form_nva_not : System.Web.UI.Page
                 img01.SaveAs(SavePath + fileName + extension);
 
                 // String titulo
-
-                String titulo = tb_titulo.Text;
+           
+                String titulo = txt_titulo.Text;
 
                 //String cuerpa
 
-                String cuerpa = tb_cuerpo.Text;
+                String cuerpa = txt_autor.Text;
 
+                //String copete
+
+                String copete = txt_copete.Text;
+
+                //String fecha_registro
+
+                String fecha_reg = fr_text.Text;
+
+                //String fecha_pub
+
+                String fecha_pub = TextBox1.Text;
+
+                //String categoria
+
+                String cat = drop_cat.SelectedValue.ToString();
+
+                
                 SqlCommand cmd1 = new SqlCommand("INSERT INTO tblImages VALUES ('" + fileName + "','" + extension + "','" + titulo + "','" + cuerpa + "')", con);
                 cmd1.ExecuteNonQuery();
 
             }
-            lblMessage.Text = "Saved successfully.";
-            Response.Redirect("fsa_noticias.aspx");
+            Label1.Text = "Saved successfully.";
+            Response.Redirect("form_noticias.aspx");
         }
     }
 }
+ 
