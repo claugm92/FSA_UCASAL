@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="fsa_noticias.aspx.cs" Inherits="fsa_noticias" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="form_noticias.aspx.cs" Inherits="form_noticias" %>
 
 
 <!DOCTYPE html>

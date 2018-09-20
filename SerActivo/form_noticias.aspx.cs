@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-public partial class fsa_noticias : System.Web.UI.Page
+public partial class form_noticias : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

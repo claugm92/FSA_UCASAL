@@ -1,18 +1,26 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="noticias.aspx.cs" Inherits="noticias" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="form_nva_not.aspx.cs" Inherits="form_nva_not" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <title>Upload Images </title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+            nombre de usuario logueado
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <br />
+            <br />
     <div class="container" style="padding-top:10px">
         <div class="form-horizontal">
             <div class="form-group">
-                <asp:Label ID="Label1" runat="server" Text="Upload Image 1 " CssClass="col-md-2 control-label"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Upload Image 1 " CssClass="col-md-2 control-label"></asp:Label>
                <div class="col-md-3">
                    <asp:Label ID="Label6" runat="server" Text="TITULO"></asp:Label>
                    <asp:TextBox ID="tb_titulo" runat="server" Width="387px"></asp:TextBox>
@@ -34,6 +42,14 @@
         </div>
     
     </div>
+    
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="ABANDONAR SESION" CssClass="btn-lg"/>
+            <br />
+
+            <br />
+
+        </div>
     </form>
 </body>
 </html>

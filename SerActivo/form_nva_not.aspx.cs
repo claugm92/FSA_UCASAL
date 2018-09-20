@@ -13,7 +13,7 @@ using System.Configuration;
 using System.IO;
 
 
-public partial class noticias_administrar : System.Web.UI.Page
+public partial class form_nva_not : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
