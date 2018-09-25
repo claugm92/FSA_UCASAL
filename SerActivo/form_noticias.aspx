@@ -34,6 +34,10 @@
                             <img src="Images/<%#Eval("Name") %><%#Eval("Extension") %>" alt="<%#Eval("Name") %>" />
                             <asp:Label runat="server" ID="Label1" Text='<%# Eval("titulo") %>' Font-Bold="True" Font-Size="X-Large" />
                             <asp:Label runat="server" ID="Label2" Text='<%# Eval("cuerpo") %>' />
+                            <asp:Label runat="server" ID="Label3" Text='<%# Eval("copete") %>' />
+                            <asp:Label runat="server" ID="Label4" Text='<%# Eval("fecha_reg") %>' />
+                            <asp:Label runat="server" ID="Label5" Text='<%# Eval("fecha_pub") %>' />
+                            <asp:Label runat="server" ID="Label6" Text='<%# Eval("categoria") %>' />
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>

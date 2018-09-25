@@ -23,7 +23,7 @@ public partial class form_noticias : System.Web.UI.Page
         string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
         using (SqlConnection con = new SqlConnection(cs))
         {
-            SqlCommand cmd = new SqlCommand("SELECT [Name],[Extension],[titulo],[cuerpo] FROM tblImages", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tblImages", con);
             con.Open();
             using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
             {

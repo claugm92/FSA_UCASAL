@@ -65,7 +65,7 @@ public partial class form_nva_not : System.Web.UI.Page
 
                 //String cuerpa
 
-                String cuerpa = txt_autor.Text;
+                String cuerpa = txt_cuerpo.Text;
 
                 //String copete
 
@@ -84,7 +84,9 @@ public partial class form_nva_not : System.Web.UI.Page
                 String cat = drop_cat.SelectedValue.ToString();
 
                 
-                SqlCommand cmd1 = new SqlCommand("INSERT INTO tblImages VALUES ('" + fileName + "','" + extension + "','" + titulo + "','" + cuerpa + "')", con);
+                SqlCommand cmd1 = new SqlCommand(
+                    "INSERT INTO tblImages(name,extension,titulo,cuerpo,copete,fecha_reg,fecha_pub,categoria)" +
+                    " VALUES ('" + fileName + "','" + extension + "','" + titulo + "','" + cuerpa + "','" + copete + "','" + fecha_reg + "','" + fecha_pub + "','" + cat + "')", con);
                 cmd1.ExecuteNonQuery();
 
             }
