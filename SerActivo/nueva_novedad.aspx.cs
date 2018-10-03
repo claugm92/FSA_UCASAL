@@ -1,32 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Configuration;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
-using System.Text;
+using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.IO;
+using System.Web.UI.WebControls;
 
-
-public partial class form_nva_not : System.Web.UI.Page
+public partial class nueva_novedad : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         login_load();
-        Label1.Text = string.Format("Bienvenido al Sistema: {0}", Thread.CurrentPrincipal.Identity.Name);
+        fr_text.Text= DateTime.Now.ToString("yyyy.MM.dd");
+        txt_autor.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
     }
-
-
     private void login_load()
     {
+        /*Si el usuario no esta identificado, se redirije a la pagina de logueo*/
         if (Thread.CurrentPrincipal.Identity.Name.Equals("?") || Thread.CurrentPrincipal.Identity.Name.Equals(null))
         {
-            Label1.Text = string.Format("DEBE AUTENTICARSE...");
+            
             FormsAuthentication.RedirectToLoginPage();
         }
 
@@ -41,7 +38,7 @@ public partial class form_nva_not : System.Web.UI.Page
 
     protected void btnUploadClick(object sender, EventArgs e)
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
         using (SqlConnection con = new SqlConnection(connectionString))
         {
             con.Open();
@@ -60,12 +57,12 @@ public partial class form_nva_not : System.Web.UI.Page
                 img01.SaveAs(SavePath + fileName + extension);
 
                 // String titulo
-           
+
                 String titulo = txt_titulo.Text;
 
                 //String cuerpa
 
-                String cuerpa = txt_cuerpo.Text;
+                String cuerpo = txt_cuerpo.Text;
 
                 //String copete
 
@@ -83,16 +80,18 @@ public partial class form_nva_not : System.Web.UI.Page
 
                 String cat = drop_cat.SelectedValue.ToString();
 
-                
+                //String Nick de usuario
+
+                String nick = txt_autor.Text;
+
                 SqlCommand cmd1 = new SqlCommand(
-                    "INSERT INTO tblImages(name,extension,titulo,cuerpo,copete,fecha_reg,fecha_pub,categoria)" +
-                    " VALUES ('" + fileName + "','" + extension + "','" + titulo + "','" + cuerpa + "','" + copete + "','" + fecha_reg + "','" + fecha_pub + "','" + cat + "')", con);
+                    "INSERT INTO Novedades(categoria,nick_admin,titulo_nov,copete_nov,nombre,extension,cuerpo_nov,fecha_nov) VALUES('" + cat + "','" + nick + "','" + titulo + "','" + copete + "','" + fileName + "','" + extension + "','" + cuerpo + "','" + fecha_pub + "')", con);
+                //" VALUES ('" + fileName + "','" + extension + "','" + titulo + "','" + cuerpo + "','" + copete + "','" + fecha_reg + "','" + fecha_pub + "','" + cat + "')", con);
                 cmd1.ExecuteNonQuery();
 
             }
-            Label1.Text = "Saved successfully.";
-            Response.Redirect("form_noticias.aspx");
+            //Label1.Text = "Saved successfully.";
+            Response.Redirect("ver_noticias.aspx");
         }
     }
 }
- 

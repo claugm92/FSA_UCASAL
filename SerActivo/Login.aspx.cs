@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
@@ -18,8 +19,6 @@ public partial class Default2 : System.Web.UI.Page
         
     }
     
-
-
     protected void Button1_Click1(object sender, EventArgs e)
     {
         string usuario = Request.Form["tb_usuario"];
@@ -34,7 +33,7 @@ public partial class Default2 : System.Web.UI.Page
         }
         else
         {
-            lbl_error.Text = "Nombre de usuario o contraseña INVALIDOS";
+            lbl_error.Text = "Nombre de usuario o contraseña INCORRECTO";
             lbl_error.Visible = true;
         }
 
@@ -63,11 +62,11 @@ contiene solo un metodo con parametro string que devuelve el valor convertido
     public static bool Autenticar(string usuario, string password)
     {
         string sql = @"SELECT COUNT(*)
-                      FROM Usuarios
-                      WHERE nick = @nombre AND psw = @password";
+                      FROM Administradores
+                      WHERE nick_admin = @nombre AND psw_admin = @password";
 
-        
-        using (SqlConnection conn = new SqlConnection("Data Source=CLAU-NOTEBOOK\\MYSQLSERVER;Initial Catalog=itel;Integrated Security=True"))
+        string cs = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
+        using (SqlConnection conn = new SqlConnection(cs))
         {
             conn.Open();
             

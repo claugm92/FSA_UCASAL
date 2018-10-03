@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Default2" runat="server" %>
 
 <head>
+    <title>Iniciar sesión - FSA</title>
     <link href="estilos/StyleSheet_login.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
