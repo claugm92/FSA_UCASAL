@@ -53,18 +53,23 @@
                 </div>
 
                 <ul class="nav nav-sidebar">
-
-                    <li><a role="button" href="#collapse-locali" data-toggle="collapse" data-parent="#accordion">Noticias</a></li>
-                    <ul class="nav sub-menu collapse" id="collapse-locali" />
-                    <li><a href="ver_noticias.aspx">Ver noticias</a></li>
-                    <li><a href="nueva_noticia.aspx">Nueva noticia</a></li>
-                </ul>
-                <li><a role="button" href="#collapse-shopping" data-toggle="collapse" data-parent="#accordion">Actividades</a></li>
-                <ul class="nav sub-menu collapse" id="collapse-shopping">
-                    <li><a href="ver_actividades.aspx">Ver Actividades</a></li>
-                    <li><a href="nueva_actividad">Nueva Actividad</a></li>
-                </ul>
-            </div>
+            
+            <li><a role="button" href="#collapse-locali" data-toggle="collapse" data-parent="#accordion">Noticias</a></li>
+            <ul class="nav sub-menu collapse" id="collapse-locali"/>
+              <li><a href="ver_noticias.aspx">Ver noticias</a></li>
+              <li><a href="nueva_noticia.aspx">Nueva noticia</a></li>
+            </ul>
+            <li><a role="button" href="#collapse-shopping" data-toggle="collapse" data-parent="#accordion">Actividades</a></li>
+            <ul class="nav sub-menu collapse" id="collapse-shopping">
+              <li><a href="ver_actividades.aspx">Ver Actividades</a></li>
+              <li><a href="nueva_actividad.aspx">Nueva Actividad</a></li>
+            </ul>
+          <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
+            <ul class="nav sub-menu collapse" id="collapse-novedades">
+              <li><a href="ver_actividades.aspx">Ver Novedades</a></li>
+              <li><a href="nueva_actividad.aspx">Nueva Novedad</a></li>
+            </ul>
+        </div>
 
             <div class="container-fluid main">
                 <h1 class="page-header">Nueva Noticia</h1>

@@ -173,7 +173,7 @@ td.text-right {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">ir a Ser Activo</a></li>
+            <li><a href="SerActivo.aspx">ir a Ser Activo</a></li>
     <li><a href="home.aspx"><asp:Label ID="lbl_usuario" runat="server" Text="Label"/></a></li>
             <li><a href="#">Salir &nbsp; <span class="glyphicon glyphicon-share"></span></a></li>
           </ul>
@@ -230,7 +230,12 @@ td.text-right {
 			<div class="panel panel-default">
                <!-- AQUI SE COLAN LOS CONTROLES --> 
 				<div class="panel-body" id="chartFatturazioneMensile">
+                    <div><asp:Label ID="Label1" runat="server" Text="La cantidad de articulos publicados se detallan a continuación" Font-Bold="True"></asp:Label>
+
+                        <br />
+                    </div>
                     
+                    <div> </div>
           <div class="col-xs-12 col-sm-6 col-md-3 placeholder">
               <div class="panel panel-default">
                 <div class="panel-heading">Cantidad de Noticias</div>

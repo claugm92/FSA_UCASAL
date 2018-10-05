@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_actividades.aspx.cs" Inherits="ver_actividades" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_novedades.aspx.cs" Inherits="ver_novedades" %>
 
 
 
@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Ver Actividades</title>
+    <title>Ver Novedades</title>
      <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
     <link rel='stylesheet' href='https://bootswatch.com/flatly/bootstrap.min.css'/>
     <link href="estilos/StyleHome.css" rel="stylesheet" />
@@ -216,7 +216,7 @@ td.text-right {
         <div class="container-fluid main">
           
           
-          <h1 class="page-header">Ver actividades</h1>
+          <h1 class="page-header">Ver Novedades</h1>
           
             <div>
 
@@ -234,14 +234,14 @@ td.text-right {
 				<div class="panel-body" id="chartFatturazioneMensile">
                     
           
-                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" DataKeyNames="id_act" DataSourceID="DataSourceActividades" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" DataKeyNames="id_nov" DataSourceID="SqlDataSourceNovedades" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="id_act" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_act" />
-                            <asp:BoundField DataField="titulo_act" HeaderText="TITULO" SortExpression="titulo_act" />
-                            <asp:BoundField DataField="subtitulo_act" HeaderText="SUBTITULO" SortExpression="subtitulo_act" />
-                            <asp:BoundField DataField="cuerpo_act" HeaderText="CUERPO" SortExpression="cuerpo_act" />
-                            <asp:BoundField DataField="fecha_act" HeaderText="FECHA DE ACT" SortExpression="fecha_act" />
+                            <asp:BoundField DataField="id_nov" HeaderText="id_nov" InsertVisible="False" ReadOnly="True" SortExpression="id_nov" />
+                            <asp:BoundField DataField="titulo_nov" HeaderText="titulo_nov" SortExpression="titulo_nov" />
+                            <asp:BoundField DataField="copete_nov" HeaderText="copete_nov" SortExpression="copete_nov" />
+                            <asp:BoundField DataField="cuerpo_nov" HeaderText="cuerpo_nov" SortExpression="cuerpo_nov" />
+                            <asp:BoundField DataField="fecha_nov" HeaderText="fecha_nov" SortExpression="fecha_nov" />
                             <asp:CommandField ShowSelectButton="True" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
@@ -257,18 +257,31 @@ td.text-right {
                     </asp:GridView>
 
 
-				    <asp:SqlDataSource ID="DataSourceActividades" runat="server" ConnectionString="<%$ ConnectionStrings:conexion_fsa %>" SelectCommand="SELECT [id_act], [titulo_act], [subtitulo_act], [cuerpo_act], [fecha_act] FROM [Actividades]"></asp:SqlDataSource>
+				    <asp:SqlDataSource ID="SqlDataSourceNovedades" runat="server" ConnectionString="<%$ ConnectionStrings:conexion_fsa %>" SelectCommand="SELECT [id_nov], [titulo_nov], [copete_nov], [cuerpo_nov], [fecha_nov] FROM [Novedades]"></asp:SqlDataSource>
                     <br />
                     <asp:Button ID="bt_modificar" class="btn btn-default" runat="server" Text="Modificar" OnClick="bt_modificar_Click" />
                     &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="bt_eliminar" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_eliminar_Click" />
+                    <asp:Button ID="bt_eliminar" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_elim_conf_Click" />
                     &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="bt_nueva" class="btn btn-primary" runat="server" Text="Nueva actividad" PostBackUrl="~/nueva_actividad.aspx" />
+                    <asp:Button ID="bt_nueva" class="btn btn-primary" runat="server" Text="Nueva novedad" PostBackUrl="~/nueva_novedad.aspx" />
                     <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
                 <asp:Label ID="lbl_eliminar" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
                 <!-- HASTA AQUI LOS CONTROLES -->
+			    <br />
+                <br />
+                <br />
+                <div class="panel panel-default" id="confirmar_elim" runat="server">
+
+                <asp:Label ID="lbl_confirmar_elim" runat="server" Text="Label de confirmacion" CssClass="form-control"></asp:Label>
+                <br />
+<asp:Button ID="bt_conf_elim" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_eliminar_Click" />
+                    <asp:Button ID="bt_canc_elmin" class="btn btn-default" runat="server" Text="Cancelar" OnClick="bt_can_elim_Click" />
+                    
+                    <br />
+
+                </div>
 			</div>
 		</div>
 

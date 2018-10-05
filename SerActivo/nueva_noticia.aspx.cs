@@ -68,13 +68,13 @@ public partial class nueva_noticia : System.Web.UI.Page
 
                 String copete = txt_copete.Text;
 
-                //String fecha_registro
-
-                String fecha_reg = fr_text.Text;
-
                 //String fecha_pub
 
                 String fecha_pub = TextBox1.Text;
+                
+                String dia = fecha_pub.Substring(0, 2);
+                String mes=  Strings.Right(fecha_pub, 2);
+                String año=  Strings.Right(fecha_pub, 2);
 
                 //String categoria
 

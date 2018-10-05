@@ -12,13 +12,12 @@ public partial class home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        lbl_titulo.Text = string.Format("Bienvenido al Sistema: {0}", Thread.CurrentPrincipal.Identity.Name);
+        lbl_titulo.Text = string.Format("Bienvenido al Sistema");
         lbl_usuario.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
         cargar_controles();
     }
     private void cargar_controles()
     {
-
         string sql1 = @"SELECT COUNT(*)
                       FROM Noticias";
         string sql2 = @"SELECT COUNT(*)

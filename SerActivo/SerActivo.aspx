@@ -1526,7 +1526,7 @@ body {
                             <span class="arlo-loadEventTemplateHiddenButtonContainer">
                                 <div data-id="2q13ihvd" style="display: none;" class="arlo-subcontrol EventTemplate" id="subcontrol-2q13ihvd">View Template Details</div>
                             </span>
-                        </div>
+                        </div>  
                     </div>
             </ItemTemplate>
         </asp:Repeater>
