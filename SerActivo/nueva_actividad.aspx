@@ -66,8 +66,8 @@
             </ul>
           <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
             <ul class="nav sub-menu collapse" id="collapse-novedades">
-              <li><a href="ver_actividades.aspx">Ver Novedades</a></li>
-              <li><a href="nueva_actividad.aspx">Nueva Novedad</a></li>
+              <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
+              <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
             </ul>
         </div>
             <!-- Titulo de la pagina -->
@@ -82,7 +82,7 @@
                                 <div class="panel panel-default">
                                     <!-- AQUI SE COLAN LOS CONTROLES -->
                                     <div class="panel-body" id="chartFatturazioneMensile">
-
+                                        <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="False"></asp:Label>
                                         <!-- Titulo-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_titulo">Título</label>                                            
@@ -128,7 +128,7 @@
 
                                         <!-- Fecha de actividad-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="fr_txt">Fecha de inicio de actividad</label>
+                                            <label class="col-md-4 control-label" for="fr_txt">Fecha de creacion</label>
                                             
                                                 <asp:TextBox ID="txt_fecha_act" name="fr_text" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="SingleLine" CssClass="form-control" Enabled="False"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Debe seleccionar una fecha de registro" ControlToValidate="txt_fecha_act" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -142,7 +142,6 @@
                                                 <asp:TextBox ID="TextBox1" name="fp_text" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="Date"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Debe seleccionar fecha de publicación" ControlToValidate="TextBox1" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <span class="help-block"></span>
-                                            
                                         </div>
 
 
@@ -166,7 +165,8 @@
                                             <label class="col-md-4 control-label" for="cargar_not_boton"></label>
                                             <div class="col-md-8">
                                                 <asp:Button runat="server" ID="cargar_not_boton" OnClick="btnUploadClick" Text="Generar actividad" class="btn btn-success" />
-                                                <asp:Button runat="server" ID="volver_boton" Text="Cancelar" class="btn btn-danger" />
+                                                      <a href="home.aspx" class="block"> <button type="button" class="btn btn-default" data-dismiss="modal" ">Volver atrás</button>
+              </a>
                                             </div>
                                         </div>
 

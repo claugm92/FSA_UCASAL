@@ -11,7 +11,8 @@ public partial class ver_noticias : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        lbl_eliminar.Text = "";
+        lbl_eliminar.Visible = false;
     }
 
     protected void bt_modificar_Click(object sender, EventArgs e)
@@ -26,8 +27,8 @@ public partial class ver_noticias : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            Label1.Text = "Debe seleccionar una fila antes de continuar";
-            Label1.Visible = true;
+            lbl_eliminar.Text = "Debe seleccionar una fila antes de continuar";
+            lbl_eliminar.Visible = true;
         }
     }
 
@@ -50,12 +51,13 @@ public partial class ver_noticias : System.Web.UI.Page
                 GridView1.DataBind();
                 
             }
-            Response.Redirect("Login.aspx");
+            Response.Write("<script>alert('Noticia eliminada correctamente');</script>");
+            GridView1.DataBind();
 
         }
         catch (Exception ex)
         {
-            lbl_eliminar.Text = ex.ToString();
+            lbl_eliminar.Text = "Debe seleccionar una fila antes de continuar";
             lbl_eliminar.Visible = true;
         }
         

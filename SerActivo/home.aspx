@@ -169,7 +169,7 @@ td.text-right {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Panel de Administracion</a>
+          <a class="navbar-brand" href="h">Panel de Administracion</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -206,8 +206,8 @@ td.text-right {
             </ul>
           <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
             <ul class="nav sub-menu collapse" id="collapse-novedades">
-              <li><a href="ver_actividades.aspx">Ver Novedades</a></li>
-              <li><a href="nueva_actividad.aspx">Nueva Novedad</a></li>
+              <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
+              <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
             </ul>
         </div>
         

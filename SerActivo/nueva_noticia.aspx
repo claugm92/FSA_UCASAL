@@ -40,8 +40,9 @@
                         </ul>
                     </div>
                 </div>
-        </div>
         </nav>
+                </div>
+        
     
     <div class="container-fluid">
         <div class="overlay"></div>
@@ -82,7 +83,7 @@
                                 <div class="panel panel-default">
                                     <!-- AQUI SE COLAN LOS CONTROLES -->
                                     <div class="panel-body" id="chartFatturazioneMensile">
-
+                                        <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="False"></asp:Label>
                                         <!-- Titulo-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_titulo">Título</label>                                            
@@ -108,7 +109,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_cuerpo">Cuerpo</label>
                                             
-                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine" Height="170px"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar el texto del cuerpo" ControlToValidate="txt_cuerpo" ForeColor="Red"></asp:RequiredFieldValidator>
                                             
                                         </div>
@@ -176,21 +177,16 @@
                                             <label class="col-md-4 control-label" for="cargar_not_boton"></label>
                                             <div class="col-md-8">
                                                 <asp:Button runat="server" ID="cargar_not_boton" OnClick="btnUploadClick" Text="Cargar Noticia" class="btn btn-success" />
-                                                <asp:Button runat="server" ID="volver_boton" Text="Volver Atrás" class="btn btn-danger" />
+          <a href="home.aspx" class="block"> <button type="button" class="btn btn-default" data-dismiss="modal" ">Volver atrás</button>
+              </a>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
 
@@ -238,7 +234,6 @@
 
     </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" id="form-aggiungi-elemento-save">Save changes</button>
       </div>
     </div><!-- /.modal-content -->

@@ -172,13 +172,14 @@ td.text-right {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Panel de Administracion</a>
+          <a class="navbar-brand" href="home.aspx">Panel de Administracion</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="http://www.fundacionseractivo.org.ar/">ir a Ser Activo</a></li>
             <li><a href="SerActivo.aspx">ir a Noticias F.S.A</a></li>
             <li><a href="#">Salir &nbsp; <span class="glyphicon glyphicon-share"></span></a></li>
+
           </ul>
           </div>
         </div>
@@ -267,7 +268,6 @@ td.text-right {
                     <asp:Button ID="bt_nueva" class="btn btn-primary" runat="server" Text="Nueva noticia" PostBackUrl="~/nueva_noticia.aspx" />
                     <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
                 <asp:Label ID="lbl_eliminar" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
                 <!-- HASTA AQUI LOS CONTROLES -->
 			</div>

@@ -39,56 +39,125 @@ public partial class nueva_actividad : System.Web.UI.Page
 
     protected void btnUploadClick(object sender, EventArgs e)
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
-        using (SqlConnection con = new SqlConnection(connectionString))
+        /**
+         * FALTA HACER EL REDIRECT A ERROR.ASPX
+         **/
+        try
         {
-            con.Open();
-            if (img01.HasFile)
+            string connectionString = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // Getting the image path.
-                string SavePath = Server.MapPath("~/Images/");
+                con.Open();
+                if (img01.HasFile)
+                {
+                    // Getting the image path.
+                    string SavePath = Server.MapPath("~/Images/");
 
-                // Getting image name.
-                string fileName = Path.GetFileNameWithoutExtension(img01.PostedFile.FileName);
+                    // Getting image name.
+                    string fileName = Path.GetFileNameWithoutExtension(img01.PostedFile.FileName);
 
-                // Getting image extension
-                string extension = Path.GetExtension(img01.PostedFile.FileName);
+                    // Getting image extension
+                    string extension = Path.GetExtension(img01.PostedFile.FileName);
 
-                //Saving images into folder.
-                img01.SaveAs(SavePath + fileName + extension);
+                    //Saving images into folder.
+                    img01.SaveAs(SavePath + fileName + extension);
 
-                // String titulo
+                    // String titulo
 
-                String titulo = txt_titulo.Text;
+                    String titulo = txt_titulo.Text;
 
-                //String cuerpa
+                    //String cuerpa
 
-                String cuerpo = txt_cuerpo.Text;
+                    String cuerpo = txt_cuerpo.Text;
 
-                //String copete
+                    //String copete
 
-                String subtitulo = txt_copete.Text;
+                    String subtitulo = txt_copete.Text;
 
-                //String fecha_registro
+                    //String fecha_registro
 
-                String fecha_act = txt_fecha_act.Text;
+                    String fecha_act = TextBox1.Text;
 
-                //String fecha_pub
+                    String dia=fecha_act.Substring(8, 2);
+                    String mes = "";
+                    int mes_int;
+                    Int32.TryParse(fecha_act.Substring(5, 2), out mes_int);
+                    
+                                    
 
-                String fecha_creacion = TextBox1.Text;
+                    switch (mes_int)
+                    {
+                        case 01:
+                            mes = "En";
+                            break;
+                        case 02:
+                            mes = "Feb";
+                            break;
+                        case 03:
+                            mes = "Mar";
+                            break;
+                        case 04:
+                            mes = "Abr";
+                            break;
+
+                        case 05:
+                            mes = "May";
+                            break;
+
+                        case 06:
+                            mes = "Jun";
+                            break;
+
+                        case 07:
+                            mes = "Jul";
+                            break;
+
+                        case 08:
+                            mes = "Ago";
+                            break;
+
+                        case 09:
+                            mes = "Sep";
+                            break;
+
+                        case 10:
+                            mes = "Oct";
+                            break;
+
+                        case 11:
+                            mes = "Nov";
+                            break;
+                        case 12:
+                            mes = "Dic";
+                            break;
+                    }
 
 
-                //String Nick de usuario
 
-                String nick = txt_autor.Text;
+                    String año = fecha_act.Substring(0, 4);
+                    //String fecha_pub
 
-                SqlCommand cmd1 = new SqlCommand(
-                    "INSERT INTO Actividades(nick_admin,titulo_act,subtitulo_act,nombre,extension,cuerpo_act,fecha_act) VALUES('" + nick + "','" + titulo + "','" + subtitulo + "','" + fileName + "','" + extension + "','" + cuerpo + "','" + fecha_creacion + "')", con);
+                    String fecha_creacion = txt_fecha_act.Text;
 
-                cmd1.ExecuteNonQuery();
+
+                    //String Nick de usuario
+
+                    String nick = txt_autor.Text;
+
+                    SqlCommand cmd1 = new SqlCommand(
+                        "INSERT INTO Actividades(nick_admin,titulo_act,subtitulo_act,nombre,extension,cuerpo_act,fecha_act,dia_act,mes_act,año_act) VALUES('" + nick + "','" + titulo + "','" + subtitulo + "','" + fileName + "','" + extension + "','" + cuerpo + "','" + fecha_creacion + "','" + mes_int + "','" + mes + "','" + año + "')", con);
+
+                    cmd1.ExecuteNonQuery();
+                }
+                //Label1.Text = "Saved successfully.";
+                Response.Redirect("ver_noticias.aspx");
             }
-            //Label1.Text = "Saved successfully.";
-            Response.Redirect("ver_noticias.aspx");
+        }
+        catch(Exception ex)
+        {
+            lbl_error.Visible = true;
+            lbl_error.Text = ex.ToString();
+            //Response.Redirect("error.aspx");
         }
     }
 }

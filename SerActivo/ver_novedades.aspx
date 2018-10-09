@@ -208,8 +208,8 @@ td.text-right {
             </ul>
           <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
             <ul class="nav sub-menu collapse" id="collapse-novedades">
-              <li><a href="ver_actividades.aspx">Ver Novedades</a></li>
-              <li><a href="nueva_actividad.aspx">Nueva Novedad</a></li>
+              <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
+              <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
             </ul>
         </div>
         

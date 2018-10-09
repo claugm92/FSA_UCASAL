@@ -1,153 +1,124 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="form.aspx.cs" Inherits="form" %>
-
 <!DOCTYPE html>
-
-<html xml:lang="es" lang="es">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<!-- saved from url=(0065)https://previews.envatousercontent.com/files/202191611/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Slider</title>
-
-
-
-    <style type="text/css">
-        #rt-showcase.slider-container {
-            background: #F5F6F8;
-        }
-
-        .slider-container {
-            padding-top: 20px;
-        }
-
-            .slider-container .csslider1 {
-                position: relative;
-                display: block;
-                margin: 0 auto !important;
-            }
-    </style>
-</head>
-<body class="logo-type-preset1 header-headroom-enabled-scroll showcase-bg-transition-top-to-bottom showcase-type-preset1 feature-type-preset1 mainbody-overlay-light extension-type-preset1 footer-overlay-dark copyright-overlay-dark font-family-anacron font-size-is-default menu-type-dropdownmenu layout-mode-responsive col12 option-com-content menu-home -feb14-home" id="scrollheader">
-  
-    <!-- slider -->
-    <section id="rt-showcase-surround">
-        <div id="rt-showcase" class="slider-container rt-overlay-dark">
-            <div class="rt-container slider-container">
-                <div class="rt-grid-12 rt-alpha rt-omega">
-                    <link rel="stylesheet" href="temp/style.css">
-                    <!--[if IE]><link rel="stylesheet" href="http://cssslider.com/sliders/demo-2/engine1/ie.css"><![endif]-->
-                    <!--[if lte IE 9]><script type="text/javascript" src="http://cssslider.com/sliders/demo-2/engine1/ie.js"></script><![endif]-->
-                    <div class="csslider1 autoplay">
-                        <input name="cs_anchor1" id="cs_slide1_0" type="radio" class="cs_anchor slide">
-                        <input name="cs_anchor1" id="cs_slide1_1" type="radio" class="cs_anchor slide">
-                        <input name="cs_anchor1" id="cs_slide1_2" type="radio" class="cs_anchor slide">
-                        <input name="cs_anchor1" id="cs_slide1_3" type="radio" class="cs_anchor slide">
-                        <input name="cs_anchor1" id="cs_play1" type="radio" class="cs_anchor" checked="">
-                        <input name="cs_anchor1" id="cs_pause1" type="radio" class="cs_anchor">
-                        <ul>
-                            <div style="width: 100%; visibility: hidden; font-size: 0px; line-height: 0;">
-                                <img src="temp/buns.jpg" style="width: 100%;">
-                            </div>
-                            <li class="num0 img">
-                                <img src="temp/buns.jpg" alt="Buns" title="Buns">
-                            </li>
-                            <li class="num1 img">
-                                <img src="temp/croissant.jpg" alt="Croissant" title="Croissant">
-                            </li>
-                            <li class="num2 img">
-                                <img src="temp/lemonpie.jpg" alt="Lemon pie" title="Lemon pie">
-                            </li>
-                            <li class="num3 img">
-                                <img src="temp/teaandcake.jpg" alt="Breakfast" title="Breakfast">
-                            </li>
-
-                        </ul>
-                        <div class="cs_description">
-                            <label class="num0">
-                                <span class="cs_title"><span class="cs_wrapper">Buns</span></span>
-                                <br>
-                                <span class="cs_descr"><span class="cs_wrapper">Curd buns</span></span>
-                            </label>
-                            <label class="num1">
-                                <span class="cs_title"><span class="cs_wrapper">Croissant</span></span>
-                                <br>
-                                <span class="cs_descr"><span class="cs_wrapper">Chocolate croissant</span></span>
-                            </label>
-                            <label class="num2">
-                                <span class="cs_title"><span class="cs_wrapper">Lemon pie</span></span>
-                                <br>
-                                <span class="cs_descr"><span class="cs_wrapper">Two pieces of lemon pie</span></span>
-                            </label>
-                            <label class="num3">
-                                <span class="cs_title"><span class="cs_wrapper">Breakfast</span></span>
-                                <br>
-                                <span class="cs_descr"><span class="cs_wrapper">Chocolate croissant</span></span>
-                            </label>
-                        </div>
-
-                        <div class="cs_arrowprev">
-                            <label class="num0" for="cs_slide1_0"></label>
-                            <label class="num1" for="cs_slide1_1"></label>
-                            <label class="num2" for="cs_slide1_2"></label>
-                            <label class="num3" for="cs_slide1_3"></label>
-                        </div>
-                        <div class="cs_arrownext">
-                            <label class="num0" for="cs_slide1_0"></label>
-                            <label class="num1" for="cs_slide1_1"></label>
-                            <label class="num2" for="cs_slide1_2"></label>
-                            <label class="num3" for="cs_slide1_3"></label>
-                        </div>
-
-                        <!-- Son las vistas en miniaturas -->
-                        <div class="cs_bullets">
-                            <label class="num0" for="cs_slide1_0">
-                                <span class="cs_point"></span>
-                                <span class="cs_thumb">
-                                    <img src="temp/buns(1).jpg" alt="Buns" title="Buns"></span>
-                            </label>
-                            <label class="num1" for="cs_slide1_1">
-                                <span class="cs_point"></span>
-                                <span class="cs_thumb">
-                                    <img src="temp/croissant(1).jpg" alt="Croissant" title="Croissant"></span>
-                            </label>
-                            <label class="num2" for="cs_slide1_2">
-                                <span class="cs_point"></span>
-                                <span class="cs_thumb">
-                                    <img src="temp/lemonpie(1).jpg" alt="Lemon pie" title="Lemon pie"></span>
-                            </label>
-                            <label class="num3" for="cs_slide1_3">
-                                <span class="cs_point"></span>
-                                <span class="cs_thumb">
-                                    <img src="temp/teaandcake(1).jpg" alt="Breakfast" title="Breakfast"></span>
-                            </label>
-                        </div>
-                    </div>
-
+    <title>Moder Slider</title>
+    <link href="Moder%20Slider_files/swiper.min.css" rel="stylesheet" />
+    <link href="Moder%20Slider_files/style.min.css" rel="stylesheet" />
+  </head>
+  <body class="container">
+    <!-- Slider main container-->
+    <div class="swiper-container swiper-container-horizontal swiper-container-3d swiper-container-coverflow">
+      <!-- Additional required wrapper-->
+      <div class="swiper-wrapper" style="transform: translate3d(-2898px, 0px, 0px); transition-duration: 0ms;">
+        <!-- Slides-->
+        <div class="swiper-slide" style="width: 1349px; transform: translate3d(1003.34px, 0px, -602.001px) rotateX(0deg) rotateY(0deg); z-index: -1; transition-duration: 0ms; margin-right: 100px;">
+          <div class="card">
+            <div class="card__header">
+              <div class="header-in-card">
+                <div class="header-in-card__menu">
+                  <div class="menu">
+                    <div class="menu__icon"><span></span><span></span><span></span></div><a href="http:" target="_blank" class="menu__item">Anatomy</a><a href="http:" target="_blank" class="menu__item">Ecology</a><a href="http:" target="_blank" class="menu__item">Intelligence</a><a href="http:" target="_blank" class="menu__item">Mythology</a>
+                  </div>
                 </div>
-                <div class="clear"></div>
+                <div class="header-in-card__share-and-like">
+                  <div class="share-block">
+                    <div class="share-block__share-icon"><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="share-block__facebook-icon"></div>
+                    <div class="share-block__twitter-icon"></div>
+                  </div>
+                  <div class="like-block">
+                    <div class="like-block__like-icon"></div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="card__body">
+              <h1 class="card-title">Dogs</h1>
+              <div class="card-meta">
+                <div class="card-meta__title">Tags</div>
+                <div class="card-meta__line"></div>
+                <div class="card-meta__quantity">22.345 images</div>
+              </div>
+              <div class="card-tags"><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Animals</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Dog</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Smiling</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Fluffy</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Awesome</a></div>
+            </div><img src="*/Moder%20Slider_files/dog.png" alt="" class="card__image">
+          </div>
         </div>
-    </section>
-    <!-- /slider -->
-    <section id="rt-main-surround">
-        <div id="rt-transition">
-            <div id="rt-mainbody-surround">
-                <div id="rt-top" class="rt-overlay-light">
-                    <div class="rt-container hide-pointer">
-                        <div class="rt-grid-12 rt-alpha rt-omega">
-                            <div class="rt-block fp-top rt-center rt-big-title">
-                                <div class="module-surround">
-                                    <div class="module-content"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+        <div class="swiper-slide swiper-slide-prev" style="width: 1349px; transform: translate3d(466.271px, 0px, -279.763px) rotateX(0deg) rotateY(0deg); z-index: 0; transition-duration: 0ms; margin-right: 100px;">
+          <div class="card">
+            <div class="card__header">
+              <div class="header-in-card">
+                <div class="header-in-card__menu">
+                  <div class="menu">
+                    <div class="menu__icon"><span></span><span></span><span></span></div><a href="http:" target="_blank" class="menu__item">Anatomy</a><a href="http:" target="_blank" class="menu__item">Ecology</a><a href="http:" target="_blank" class="menu__item">Intelligence</a><a href="http:" target="_blank" class="menu__item">Mythology</a>
+                  </div>
                 </div>
+                <div class="header-in-card__share-and-like">
+                  <div class="share-block">
+                    <div class="share-block__share-icon"><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="share-block__facebook-icon"></div>
+                    <div class="share-block__twitter-icon"></div>
+                  </div>
+                  <div class="like-block">
+                    <div class="like-block__like-icon"></div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
+            <div class="card__body">
+              <h1 class="card-title">Birds</h1>
+              <div class="card-meta">
+                <div class="card-meta__title">Tags</div>
+                <div class="card-meta__line"></div>
+                <div class="card-meta__quantity">13.007 images</div>
+              </div>
+              <div class="card-tags"><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Animals</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Bird</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Smiling</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Fluffy</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Awesome</a></div>
+            </div><img src="*/Moder%20Slider_files/birds.png" alt="" class="card__image">
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide-active" style="width: 1349px; transform: translate3d(-70.7932px, 0px, -42.4759px) rotateX(0deg) rotateY(0deg); z-index: 1; transition-duration: 0ms; margin-right: 100px;">
+          <div class="card">
+            <div class="card__header">
+              <div class="header-in-card">
+                <div class="header-in-card__menu">
+                  <div class="menu">
+                    <div class="menu__icon"><span></span><span></span><span></span></div><a href="http:" target="_blank" class="menu__item">Anatomy</a><a href="http:" target="_blank" class="menu__item">Ecology</a><a href="http:" target="_blank" class="menu__item">Intelligence</a><a href="http:" target="_blank" class="menu__item">Mythology</a>
+                  </div>
+                </div>
+                <div class="header-in-card__share-and-like">
+                  <div class="share-block">
+                    <div class="share-block__share-icon"><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="share-block__facebook-icon"></div>
+                    <div class="share-block__twitter-icon"></div>
+                  </div>
+                  <div class="like-block">
+                    <div class="like-block__like-icon"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card__body">
+              <h1 class="card-title">Cats</h1>
+              <div class="card-meta">
+                <div class="card-meta__title">Tags</div>
+                <div class="card-meta__line"></div>
+                <div class="card-meta__quantity">99.998 images</div>
+              </div>
+              <div class="card-tags"><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Animals</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Cat</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Smiling</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Fluffy</a><a href="https://previews.envatousercontent.com/files/202191611/index.html#" target="_blank" class="card-tags__item">Awesome</a></div>
+            </div><img src="*/Moder%20Slider_files/cats.png" alt="" class="card__image">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+ 
+  
 </body>
-</html>
 
+       <script type="application/javascript" src="*/Moder%20Slider_files/jquery.min.js.descarga"></script>
+    <script type="application/javascript" src="*/Moder%20Slider_files/swiper.jquery.min.js.descarga"></script>
+    <script type="application/javascript" src="*/Moder%20Slider_files/app.min.js.descarga"></script>
+ 
+</html>

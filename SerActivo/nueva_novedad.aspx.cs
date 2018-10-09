@@ -38,60 +38,72 @@ public partial class nueva_novedad : System.Web.UI.Page
 
     protected void btnUploadClick(object sender, EventArgs e)
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
-        using (SqlConnection con = new SqlConnection(connectionString))
+        try
         {
-            con.Open();
-            if (img01.HasFile)
+
+            string connectionString = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // Getting the image path.
-                string SavePath = Server.MapPath("~/Images/");
+                con.Open();
+                if (img01.HasFile)
+                {
+                    // Getting the image path.
+                    string SavePath = Server.MapPath("~/Images/");
 
-                // Getting image name.
-                string fileName = Path.GetFileNameWithoutExtension(img01.PostedFile.FileName);
+                    // Getting image name.
+                    string fileName = Path.GetFileNameWithoutExtension(img01.PostedFile.FileName);
 
-                // Getting image extension
-                string extension = Path.GetExtension(img01.PostedFile.FileName);
+                    // Getting image extension
+                    string extension = Path.GetExtension(img01.PostedFile.FileName);
 
-                //Saving images into folder.
-                img01.SaveAs(SavePath + fileName + extension);
+                    //Saving images into folder.
+                    img01.SaveAs(SavePath + fileName + extension);
 
-                // String titulo
+                    // String titulo
 
-                String titulo = txt_titulo.Text;
+                    String titulo = txt_titulo.Text;
 
-                //String cuerpa
+                    //String cuerpa
 
-                String cuerpo = txt_cuerpo.Text;
+                    String cuerpo = txt_cuerpo.Text;
 
-                //String copete
+                    //String copete
 
-                String copete = txt_copete.Text;
+                    String copete = txt_copete.Text;
 
-                //String fecha_registro
+                    //String fecha_registro
 
-                String fecha_reg = fr_text.Text;
+                    String fecha_reg = fr_text.Text;
 
-                //String fecha_pub
+                    //String fecha_pub
 
-                String fecha_pub = TextBox1.Text;
+                    String fecha_pub = TextBox1.Text;
+                    String dia = fecha_pub.Substring(8, 2);
+                    String mes = fecha_pub.Substring(5, 2);
+                    String año = fecha_pub.Substring(0, 4);
 
-                //String categoria
+                    //String categoria
 
-                String cat = drop_cat.SelectedValue.ToString();
+                    String cat = drop_cat.SelectedValue.ToString();
 
-                //String Nick de usuario
+                    //String Nick de usuario
 
-                String nick = txt_autor.Text;
+                    String nick = txt_autor.Text;
 
-                SqlCommand cmd1 = new SqlCommand(
-                    "INSERT INTO Novedades(categoria,nick_admin,titulo_nov,copete_nov,nombre,extension,cuerpo_nov,fecha_nov) VALUES('" + cat + "','" + nick + "','" + titulo + "','" + copete + "','" + fileName + "','" + extension + "','" + cuerpo + "','" + fecha_pub + "')", con);
-                //" VALUES ('" + fileName + "','" + extension + "','" + titulo + "','" + cuerpo + "','" + copete + "','" + fecha_reg + "','" + fecha_pub + "','" + cat + "')", con);
-                cmd1.ExecuteNonQuery();
+                    SqlCommand cmd1 = new SqlCommand(
+                        "INSERT INTO Novedades(categoria,nick_admin,titulo_nov,copete_nov,nombre,extension,cuerpo_nov,fecha_nov,dia_nov,mes_nov,año_nov) VALUES('" + cat + "','" + nick + "','" + titulo + "','" + copete + "','" + fileName + "','" + extension + "','" + cuerpo + "','" + fecha_pub + "','" + dia + "','" + mes + "','" + año + "')", con);
+                    //" VALUES ('" + fileName + "','" + extension + "','" + titulo + "','" + cuerpo + "','" + copete + "','" + fecha_reg + "','" + fecha_pub + "','" + cat + "')", con);
+                    cmd1.ExecuteNonQuery();
 
+                }
+                //Label1.Text = "Saved successfully.";
+                Response.Redirect("ver_noticias.aspx");
             }
-            //Label1.Text = "Saved successfully.";
-            Response.Redirect("ver_noticias.aspx");
         }
+        catch
+        {
+            Response.Redirect("error.aspx");
+        }
+
     }
 }

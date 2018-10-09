@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -16,30 +17,50 @@ public partial class home : System.Web.UI.Page
         lbl_usuario.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
         cargar_controles();
     }
+
+    /*
+     * metodo de deslogueo
+     * 
+    protected void LinkButton5_Click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+    }
+    */
     private void cargar_controles()
     {
-        string sql1 = @"SELECT COUNT(*)
+        try
+        {
+
+            string sql1 = @"SELECT COUNT(*)
                       FROM Noticias";
-        string sql2 = @"SELECT COUNT(*)
+            string sql2 = @"SELECT COUNT(*)
                       FROM Actividades";
-        string sql3 = @"SELECT COUNT(*)
+            string sql3 = @"SELECT COUNT(*)
                       FROM Novedades";
 
 
-        string cs = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
-        using (SqlConnection conn = new SqlConnection(cs))
-        {
-            conn.Open();
+            string cs = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                conn.Open();
 
-            SqlCommand command1 = new SqlCommand(sql1, conn);
-            SqlCommand command2 = new SqlCommand(sql2, conn);
-            SqlCommand command3 = new SqlCommand(sql3, conn);
+                SqlCommand command1 = new SqlCommand(sql1, conn);
+                SqlCommand command2 = new SqlCommand(sql2, conn);
+                SqlCommand command3 = new SqlCommand(sql3, conn);
 
-            lbl_cant_not.Text = Convert.ToString(command1.ExecuteScalar());
-            lbl_cant_act.Text = Convert.ToString(command2.ExecuteScalar());
-            lbl_cant_nov.Text = Convert.ToString(command3.ExecuteScalar());
+                lbl_cant_not.Text = Convert.ToString(command1.ExecuteScalar());
+                lbl_cant_act.Text = Convert.ToString(command2.ExecuteScalar());
+                lbl_cant_nov.Text = Convert.ToString(command3.ExecuteScalar());
 
+            }
         }
+        catch (Exception ex) {
+            /*Falta capturar la excepcion, decidir si se muestra o no*/
+            Response.Redirect("error.aspx");
+        }
+
+
         
 
         

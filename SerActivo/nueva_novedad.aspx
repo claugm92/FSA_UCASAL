@@ -66,8 +66,8 @@
             </ul>
           <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
             <ul class="nav sub-menu collapse" id="collapse-novedades">
-              <li><a href="ver_actividades.aspx">Ver Novedades</a></li>
-              <li><a href="nueva_actividad.aspx">Nueva Novedad</a></li>
+              <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
+              <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
             </ul>
         </div>
 
@@ -86,7 +86,7 @@
                                         <!-- Titulo-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_titulo">Título</label>                                            
-                                                <asp:TextBox ID="txt_titulo" name="txt_titulo" class="form-control input-md" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txt_titulo" name="txt_titulo" class="form-control input-md" runat="server" MaxLength="100"></asp:TextBox>
                                                 <span class="help-block">
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar un título" ControlToValidate="txt_titulo" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </span>
@@ -96,7 +96,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_copete">Copete</label>
                                             
-                                                <asp:TextBox ID="txt_copete" name="txt_copete" class="form-control input-md" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txt_copete" name="txt_copete" class="form-control input-md" runat="server" MaxLength="200"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar un copete" ControlToValidate="txt_copete" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <span class="help-block"></span>
                                             
@@ -108,7 +108,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_cuerpo">Cuerpo</label>
                                             
-                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine" MaxLength="1500"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar el texto del cuerpo" ControlToValidate="txt_cuerpo" ForeColor="Red"></asp:RequiredFieldValidator>
                                             
                                         </div>
@@ -176,7 +176,8 @@
                                             <label class="col-md-4 control-label" for="cargar_not_boton"></label>
                                             <div class="col-md-8">
                                                 <asp:Button runat="server" ID="cargar_not_boton" OnClick="btnUploadClick" Text="Cargar Noticia" class="btn btn-success" />
-                                                <asp:Button runat="server" ID="volver_boton" Text="Volver Atrás" class="btn btn-danger" />
+                                                      <a href="home.aspx" class="block"> <button type="button" class="btn btn-default" data-dismiss="modal" ">Volver atrás</button>
+              </a>
                                             </div>
                                         </div>
 
