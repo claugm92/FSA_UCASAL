@@ -80,6 +80,8 @@ public partial class nueva_noticia : System.Web.UI.Page
                     String mes = fecha_pub.Substring(5, 2);
                     String año = fecha_pub.Substring(0, 4);
 
+
+
                     //String categoria
 
                     String cat = drop_cat.SelectedValue.ToString();

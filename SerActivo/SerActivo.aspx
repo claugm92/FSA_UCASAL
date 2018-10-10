@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fundación Ser Activo</title>
 
+    <!--Style de fonts que contiene los iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
     <!-- Actividades -->
     <style class="cp-pen-styles">
         @font-face {
@@ -1261,15 +1264,15 @@
     </style>
 
 </head>
-<!-- Color de fondo -->
+<!-- Color de fondo de la pagina -->
 <body class="w3-light-grey">
-    <!-- Navbar (En la parte superior) -->
+    <!-- Navbar o barra de navegacion (En la parte superior) -->
     <div class="w3-top">
         <div class="w3-bar w3-white w3-card" id="myNavbar">
             <a href="http://www.fundacionseractivo.org.ar/" class="w3-bar-item w3-button w3-wide">Ser Activo</a>
             <!-- Right-sided navbar links -->
             <div class="w3-right w3-hide-small">
-                <a href="#" class="w3-bar-item w3-button w3-wide">Inicio</a>
+                <a href="#" class="w3-bar-item w3-button w3-wide">Inicio</a> 
                 <a href="#noticias" class="w3-bar-item w3-button w3-wide">Noticias</a>
                 <a href="#actividades" class="w3-bar-item w3-button w3-wide">Actividades</a>
                 <a href="#contact" class="w3-bar-item w3-button w3-wide">Contactanos</a>
@@ -1285,10 +1288,10 @@
     <!-- Sidebar on small screens when clicking the menu icon -->
     <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: none" id="mySidebar">
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-        <a href="#" class="w3-bar-item w3-button w3-wide">Inicio</a>
-        <a href="#noticias" class="w3-bar-item w3-button w3-wide">Noticias</a>
-        <a href="#actividades" class="w3-bar-item w3-button w3-wide">Actividades</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-wide">Contactanos</a>
+        <a href="#" class="w3-bar-item w3-button w3-wide" onclick="w3_close()">Inicio</a>
+        <a href="#noticias" class="w3-bar-item w3-button w3-wide" onclick="w3_close()">Noticias</a>
+        <a href="#actividades" class="w3-bar-item w3-button w3-wide" onclick="w3_close()">Actividades</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-wide" onclick="w3_close()">Contactanos</a>
     </nav>
     <!-- Formulario principal -->
     <form id="form1" runat="server">
@@ -1381,9 +1384,7 @@
                                     <p>
                                         <asp:Label runat="server" ID="Label4" Text='<%# Eval("cuerpo_not") %>' />
 
-                                        <p class="w3-left">
-                                            <button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i>Like</b></button>
-                                        </p>
+                                       
                                         <p class="w3-right">
 
                                             <p class="w3-clear">
@@ -1418,23 +1419,28 @@
                         <ul class="w3-ul w3-hoverable w3-white">
                             <li class="w3-padding-16">
                                 <img src="./images/medicamed.png" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
-                                <span class="w3-large">Medicamed</span><br />
+                                <span class="w3-large"><a href="">Medicamed</a></span><br />
                                 <span>Una excelente aplicacion que le recuerda cuando debe que tomar su medicamento.</span>
                             </li>
                             <li class="w3-padding-16">
                                 <img src="./images/entrena_mente.png" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
-                                <span class="w3-large">Entrena Mente</span><br />
+                                <span class="w3-large"><a href="">EntrenaMente</a></span><br />
                                 <span>Un excelente juego que te ayudara a agilizar tu mente!</span>
                             </li>
                             <li class="w3-padding-16">
-                                <img src="./images/ser_activo.png" alt="Image" class="w3-left w3-margin-right" style="width: 50px">
-                                <span class="w3-large">SerActivo</span><br />
+                                <img src="./images/ser_activo.png" alt="Image" class="w3-left w3-margin-right" style="width: 50px"/>
+                                <span class="w3-large"><a href="">Ser Activo</a></span><br />
                                 <span>Nuestra aplicación oficial, desde ella podrás acceder a todo el contenido desde tu telefono móvil</span>
                             </li>
                             <li class="w3-padding-16 w3-hide-medium w3-hide-small">
                                 <img src="./images/desafiame.jpg" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
-                                <span class="w3-large">Desafiame</span><br />
+                                <span class="w3-large"><a href="">Desafiame (?</a></span><br />
                                 <span>La aplicacion que te desafia?</span>
+                            </li>
+                            <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+                                <img src="./images/tateti.png" alt="Image" class="w3-left w3-margin-right" style="width: 50px" />
+                                <span class="w3-large"><a href="tateti.html">Ta Te Tí</a></span><br />
+                                <span>El popular ta te ti pero ahora en tu celular (?</span>
                             </li>
                         </ul>
                     </div>
@@ -1443,15 +1449,13 @@
                     <!-- Labels / tags -->
                     <div class="w3-card w3-margin">
                         <div class="w3-container w3-padding">
-                            <h4>Tags</h4>
+                            <h4>Aprende a navegar por internet</h4>
                         </div>
                         <div class="w3-container w3-white">
                             <p>
-                                <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-                                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-                                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-                                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-                                <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+                                <video controls="true">
+                                    <source src="file.mp4" type="video/mp4" />
+                                </video>
                             </p>
                         </div>
                     </div>
@@ -1588,14 +1592,15 @@
                 </form>
             </div>
 
+            </div>
 
 
 
 
             <!-- Footer -->
 
-            <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
-                <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Volver arriba</a>
+            <footer class="w3-container w3-padding-32 w3-black w3-center">
+                <a href="#" class="w3-button w3-light-gray w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Volver arriba</a>
                 <div class="w3-xlarge w3-section">
                     <i class="fa fa-facebook-official w3-hover-opacity"></i>
                     <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -1604,10 +1609,15 @@
                     <i class="fa fa-twitter w3-hover-opacity"></i>
                     <i class="fa fa-linkedin w3-hover-opacity"></i>
                 </div>
-                <p>Powered by <a href="" title="CLAU (?" target="_blank" class="w3-hover-text-green">Clauditouu (?</a></p>
+                <p>Powered by <a href="#" title="CLAU (?" target="_blank" class="w3-hover-text-green">Clauditouu (?</a></p>
                 <p><a href="Login.aspx" title="CLAU (?" target="_blank" class="w3-hover-text-green">Administrar</a></p>
 
             </footer>
+
+
+
+            
+
 
 
             <!-- Dependencies -->
@@ -1765,30 +1775,7 @@
 
 
 
-
             <script>
-                function myMap() {
-                    myCenter = new google.maps.LatLng(41.878114, -87.629798);
-                    var mapOptions = {
-                        center: myCenter,
-                        zoom: 12, scrollwheel: false, draggable: false,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
-                    var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
-
-                    var marker = new google.maps.Marker({
-                        position: myCenter,
-                    });
-                    marker.setMap(map);
-                }
-
-                // Modal Image Gallery
-                function onClick(element) {
-                    document.getElementById("img01").src = element.src;
-                    document.getElementById("modal01").style.display = "block";
-                    var captionText = document.getElementById("caption");
-                    captionText.innerHTML = element.alt;
-                }
 
 
                 // Toggle between showing and hiding the sidebar when clicking the menu icon
