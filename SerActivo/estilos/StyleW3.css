@@ -543,6 +543,12 @@ a {
     clear: both
 }
 
+.w3-container #carousel-example-generic img{
+
+    height:70vh;
+    
+}
+
 .w3-col, .w3-half, .w3-third, .w3-twothird, .w3-threequarter, .w3-quarter {
     float: left;
     width: 100%

@@ -32,9 +32,10 @@
 
         <p class="auto-style3">
             <label for="remember">
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Iniciar Sesión" Width="225px" />
+            <asp:Button ID="Button1" for="error" runat="server" OnClick="Button1_Click1" Text="Iniciar Sesión" Width="225px" />
             </label>
         </p>
+        <br />
         <p>
             <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="False" ForeColor="Red"></asp:Label>
         </p>
