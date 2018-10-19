@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -56,9 +57,17 @@ public partial class ver_actividades : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            lbl_eliminar.Text = "Debe seleccionar una fila para aliminar!";
-            lbl_eliminar.Visible = true;
+            Label1.Text = "Debe seleccionar una fila para eliminar!";
+            Label1.Visible = true;
         }
 
     }
+
+    protected void salir_click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+    }
+
+
 }

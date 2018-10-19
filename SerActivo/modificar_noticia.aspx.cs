@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -16,6 +17,8 @@ public partial class modificar_noticia : System.Web.UI.Page
         /*Metodo que llena los controles con el id que se obtiene*/
         cargar_controles();
         txt_autor.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
+
+        lbl_usuario.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
     }
 
 
@@ -136,5 +139,14 @@ public partial class modificar_noticia : System.Web.UI.Page
         }
 
         }
+
+    protected void salir_click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
     }
+
+
+
+}
 

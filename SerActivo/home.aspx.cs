@@ -38,6 +38,8 @@ public partial class home : System.Web.UI.Page
                       FROM Actividades";
             string sql3 = @"SELECT COUNT(*)
                       FROM Novedades";
+            string sql4 = @"SELECT COUNT(*)
+                      FROM Consultas";
 
 
             string cs = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
@@ -48,10 +50,12 @@ public partial class home : System.Web.UI.Page
                 SqlCommand command1 = new SqlCommand(sql1, conn);
                 SqlCommand command2 = new SqlCommand(sql2, conn);
                 SqlCommand command3 = new SqlCommand(sql3, conn);
+                SqlCommand command4 = new SqlCommand(sql4, conn);
 
                 lbl_cant_not.Text = Convert.ToString(command1.ExecuteScalar());
                 lbl_cant_act.Text = Convert.ToString(command2.ExecuteScalar());
                 lbl_cant_nov.Text = Convert.ToString(command3.ExecuteScalar());
+                lbl_cant_cons.Text = Convert.ToString(command4.ExecuteScalar());
 
             }
         }
@@ -61,10 +65,13 @@ public partial class home : System.Web.UI.Page
         }
 
 
-        
-
-        
-
 
     }
+
+    protected void salir_click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+    }
+
 }

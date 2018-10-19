@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Nueva Actividad</title>
     <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
     <link rel='stylesheet' href='https://bootswatch.com/flatly/bootstrap.min.css' />
     <link href="estilos/StyleHome.css" rel="stylesheet" />
@@ -30,46 +30,54 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Panel de Administracion</a>
+                        <a class="navbar-brand" href="home.aspx">Panel de Administracion</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">ir a Ser Activo</a></li>
-                            <li><a href="#">Salir &nbsp; <span class="glyphicon glyphicon-share"></span></a></li>
+                            <li><a href="SerActivo.aspx">ir a Ser Activo</a></li>
+                            <li><a href="home.aspx">
+                                <asp:Label ID="lbl_usuario" runat="server" Text="Label" /></a></li>
+                             <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="salir_click">Cerrar Sesión</asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>
-        </nav>
-                </div>
+            </nav>
+        </div>
         
     
-    <div class="container-fluid">
-        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="overlay"></div>
 
-        <div class="row">
-            <div class="sidebar">
-                <div class="hamburger is-closed" data-toggle="offcanvas">
-                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+            <div class="row">
+                <div class="sidebar">
+                    <div class="hamburger is-closed" data-toggle="offcanvas">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </div>
+
+                    <ul class="nav nav-sidebar">
+
+                        <li><a role="button" href="#collapse-locali" data-toggle="collapse" data-parent="#accordion">Noticias</a></li>
+                        <ul class="nav sub-menu collapse" id="collapse-locali" />
+                        <li><a href="ver_noticias.aspx">Ver noticias</a></li>
+                        <li><a href="nueva_noticia.aspx">Nueva noticia</a></li>
+                    </ul>
+                    <li><a role="button" href="#collapse-shopping" data-toggle="collapse" data-parent="#accordion">Actividades</a></li>
+                    <ul class="nav sub-menu collapse" id="collapse-shopping">
+                        <li><a href="ver_actividades.aspx">Ver Actividades</a></li>
+                        <li><a href="nueva_actividad.aspx">Nueva Actividad</a></li>
+                    </ul>
+                    <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
+                    <ul class="nav sub-menu collapse" id="collapse-novedades">
+                        <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
+                        <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
+                    </ul>
+                    <li><a role="button" href="#collapse-consultas" data-toggle="collapse" data-parent="#accordion">Consultas</a></li>
+                    <ul class="nav sub-menu collapse" id="collapse-consultas">
+                        <li><a href="ver_consultas_le.aspx">Ver Leidas</a></li>
+                        <li><a href="ver_consultas_nl.aspx">Ver no Leidas</a></li>
+                    </ul>
                 </div>
 
-                <ul class="nav nav-sidebar">
-            
-            <li><a role="button" href="#collapse-locali" data-toggle="collapse" data-parent="#accordion">Noticias</a></li>
-            <ul class="nav sub-menu collapse" id="collapse-locali"/>
-              <li><a href="ver_noticias.aspx">Ver noticias</a></li>
-              <li><a href="nueva_noticia.aspx">Nueva noticia</a></li>
-            </ul>
-            <li><a role="button" href="#collapse-shopping" data-toggle="collapse" data-parent="#accordion">Actividades</a></li>
-            <ul class="nav sub-menu collapse" id="collapse-shopping">
-              <li><a href="ver_actividades.aspx">Ver Actividades</a></li>
-              <li><a href="nueva_actividad.aspx">Nueva Actividad</a></li>
-            </ul>
-          <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
-            <ul class="nav sub-menu collapse" id="collapse-novedades">
-              <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
-              <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
-            </ul>
-        </div>
             <!-- Titulo de la pagina -->
             <div class="container-fluid main">
                 <h1 class="page-header">Nueva Actividad</h1>

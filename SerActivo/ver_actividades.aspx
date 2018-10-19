@@ -11,208 +11,70 @@
      <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
     <link rel='stylesheet' href='https://bootswatch.com/flatly/bootstrap.min.css'/>
     <link href="estilos/StyleHome.css" rel="stylesheet" />
-
-    <style type="text/css">
-        .auto-style1 {
-            left: 0px;
-            top: 0px;
-        }
-        @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
-
-
-div.table-title {
-   display: block;
-  margin: auto;
-  max-width: 600px;
-  padding:5px;
-  width: 100%;
-}
-
-.table-title h3 {
-   color: #fafafa;
-   font-size: 30px;
-   font-weight: 400;
-   font-style:normal;
-   font-family: "Roboto", helvetica, arial, sans-serif;
-   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-   text-transform:uppercase;
-}
-
-
-/*** Table Styles **/
-
-.table-fill {
-  background: white;
-  border-radius:5px;
-  border-collapse: collapse;
-  height: 320px;
-  margin: auto;
-  max-width: 600px;
-  padding:5px;
-  width: 100%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  animation: float 5s infinite;
-}
- 
-th {
-  color:#D5DDE5;;
-  background:#1b1e24;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  font-size:14px;
-  font-weight: 100;
-  padding:12px;
-  text-align:left;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  vertical-align:middle;
-}
-
-th:first-child {
-  border-top-left-radius:3px;
-}
- 
-th:last-child {
-  border-top-right-radius:3px;
-  border-right:none;
-}
-  
-tr {
-  border-top: 1px solid #C1C3D1;
-  border-bottom-: 1px solid #C1C3D1;
-  color:#666B85;
-  font-size:16px;
-  font-weight:normal;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-}
- 
-tr:hover td {
-  background:#4E5066;
-  color:#FFFFFF;
-  border-top: 1px solid #22262e;
-}
- 
-tr:first-child {
-  border-top:none;
-}
-
-tr:last-child {
-  border-bottom:none;
-}
- 
-tr:nth-child(odd) td {
-  background:#EBEBEB;
-}
- 
-tr:nth-child(odd):hover td {
-  background:#4E5066;
-}
-
-tr:last-child td:first-child {
-  border-bottom-left-radius:3px;
-}
- 
-tr:last-child td:last-child {
-  border-bottom-right-radius:3px;
-}
- 
-td {
-  background:#FFFFFF;
-  padding:20px;
-  text-align:left;
-  vertical-align:middle;
-  font-weight:300;
-  font-size:12px;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-}
-
-td:last-child {
-  border-right: 0px;
-}
-
-th.text-left {
-  text-align: left;
-}
-
-th.text-center {
-  text-align: center;
-}
-
-th.text-right {
-  text-align: right;
-}
-
-td.text-left {
-  text-align: left;
-}
-
-td.text-center {
-  text-align: center;
-}
-
-td.text-right {
-  text-align: right;
-}
-
-
-    </style>
+    <!--hoja de estilos de la tabla-->
+    <link href="estilos/StyleSheetTabla.css" rel="stylesheet" />
+    
 
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-  
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Panel de Administracion</a>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="home.aspx">Panel de Administracion</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="SerActivo.aspx">ir a Ser Activo</a></li>
+                            <li><a href="home.aspx">
+                                <asp:Label ID="lbl_usuario" runat="server" Text="Label" /></a></li>
+                             <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="salir_click">Cerrar Sesión</asp:LinkButton></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://www.fundacionseractivo.org.ar/">ir a Ser Activo</a></li>
-            <li><a href="SerActivo.aspx">ir a Noticias F.S.A</a></li>
-            <li><a href="#">Salir &nbsp; <span class="glyphicon glyphicon-share"></span></a></li>
-          </ul>
-          </div>
-        </div>
-          </nav>
-      </div>
-        
     
-    <div class="container-fluid">
-      <div class="overlay"></div>
-      
-      <div class="row">
-        <div class="sidebar">
-          <div class="hamburger is-closed" data-toggle="offcanvas">
-            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-          </div>
-          
+        <div class="container-fluid">
+            <div class="overlay"></div>
+
+            <div class="row">
+                <div class="sidebar">
+                    <div class="hamburger is-closed" data-toggle="offcanvas">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </div>
+
                     <ul class="nav nav-sidebar">
-            
-            <li><a role="button" href="#collapse-locali" data-toggle="collapse" data-parent="#accordion">Noticias</a></li>
-            <ul class="nav sub-menu collapse" id="collapse-locali"/>
-              <li><a href="ver_noticias.aspx">Ver noticias</a></li>
-              <li><a href="nueva_noticia.aspx">Nueva noticia</a></li>
-            </ul>
-            <li><a role="button" href="#collapse-shopping" data-toggle="collapse" data-parent="#accordion">Actividades</a></li>
-            <ul class="nav sub-menu collapse" id="collapse-shopping">
-              <li><a href="ver_actividades.aspx">Ver Actividades</a></li>
-              <li><a href="nueva_actividad.aspx">Nueva Actividad</a></li>
-            </ul>
-          <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
-            <ul class="nav sub-menu collapse" id="collapse-novedades">
-              <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
-              <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
-            </ul>
-        </div>
-        
+
+                        <li><a role="button" href="#collapse-locali" data-toggle="collapse" data-parent="#accordion">Noticias</a></li>
+                        <ul class="nav sub-menu collapse" id="collapse-locali" />
+                        <li><a href="ver_noticias.aspx">Ver noticias</a></li>
+                        <li><a href="nueva_noticia.aspx">Nueva noticia</a></li>
+                    </ul>
+                    <li><a role="button" href="#collapse-shopping" data-toggle="collapse" data-parent="#accordion">Actividades</a></li>
+                    <ul class="nav sub-menu collapse" id="collapse-shopping">
+                        <li><a href="ver_actividades.aspx">Ver Actividades</a></li>
+                        <li><a href="nueva_actividad.aspx">Nueva Actividad</a></li>
+                    </ul>
+                    <li><a role="button" href="#collapse-novedades" data-toggle="collapse" data-parent="#accordion">Novedades(Carrusel)</a></li>
+                    <ul class="nav sub-menu collapse" id="collapse-novedades">
+                        <li><a href="ver_novedades.aspx">Ver Novedades</a></li>
+                        <li><a href="nueva_novedad.aspx">Nueva Novedad</a></li>
+                    </ul>
+                    <li><a role="button" href="#collapse-consultas" data-toggle="collapse" data-parent="#accordion">Consultas</a></li>
+                    <ul class="nav sub-menu collapse" id="collapse-consultas">
+                        <li><a href="ver_consultas_le.aspx">Ver Leidas</a></li>
+                        <li><a href="ver_consultas_nl.aspx">Ver no Leidas</a></li>
+                    </ul>
+                </div>
+
         <div class="container-fluid main">
           
           
@@ -232,6 +94,9 @@ td.text-right {
 			<div class="panel panel-default">
                <!-- AQUI SE COLAN LOS CONTROLES --> 
 				<div class="panel-body" id="chartFatturazioneMensile">
+                    
+          
+                <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
                     
           
                     <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" DataKeyNames="id_act" DataSourceID="DataSourceActividades" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -265,9 +130,8 @@ td.text-right {
                     &nbsp;&nbsp;&nbsp;
                     <asp:Button ID="bt_nueva" class="btn btn-primary" runat="server" Text="Nueva actividad" PostBackUrl="~/nueva_actividad.aspx" />
                     <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
-                <asp:Label ID="lbl_eliminar" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
+
+				</div>
                 <!-- HASTA AQUI LOS CONTROLES -->
 			</div>
 		</div>

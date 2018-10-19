@@ -17,6 +17,7 @@ public partial class nueva_noticia : System.Web.UI.Page
         login_load();
         fr_text.Text= DateTime.Now.ToString("yyyy.MM.dd");
         txt_autor.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
+        lbl_usuario.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
     }
     private void login_load()
     {
@@ -108,4 +109,12 @@ public partial class nueva_noticia : System.Web.UI.Page
         }
 
     }
+
+    protected void salir_click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+    }
+
+
 }

@@ -18,6 +18,7 @@ public partial class nueva_actividad : System.Web.UI.Page
         login_load();
         txt_fecha_act.Text = DateTime.Now.ToString("yyyy-MM-dd");
         txt_autor.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
+        lbl_usuario.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
     }
     private void login_load()
     {
@@ -160,4 +161,12 @@ public partial class nueva_actividad : System.Web.UI.Page
             //Response.Redirect("error.aspx");
         }
     }
+
+    protected void salir_click(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
+    }
+
+
 }

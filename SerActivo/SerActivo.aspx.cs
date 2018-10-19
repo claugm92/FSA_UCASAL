@@ -17,6 +17,7 @@ public partial class SerActivo : System.Web.UI.Page
             BindImageRepeater();
             BindImageRepeater2();
             BindImageRepeater3();
+
         }
     }
 
@@ -91,5 +92,42 @@ public partial class SerActivo : System.Web.UI.Page
         }
     }
 
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            //genero la conexion
+            string cs = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                //declaro las variables
+                String nombre = tb_nombre.Text;
+                String correo = tb_correo.Text;
+                String asunto = tb_asunto.Text;
+                String cuerpo = tb_cuerpo.Text;
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand("insert into Consultas(nom_cons, correo_cons, cuerpo_cons, leido_cons) values('" + nombre + "', '" + correo + "', '" + cuerpo + "', '')", con);
+                //ejecuto consulta
+                cmd.ExecuteNonQuery();
+                //pongo en blanco los controles
+                 tb_nombre.Text="";
+                 tb_correo.Text="";
+                 tb_asunto.Text="";
+                 tb_cuerpo.Text="";
+                con.Close();
+
+            }
+        }
+        catch
+        {
+            Response.Redirect("Error.aspx");
+        }
+
+
+
+    
+    }
 }
 

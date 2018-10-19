@@ -9,11 +9,10 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class ver_novedades : System.Web.UI.Page
+public partial class ver_consultas_nl : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        confirmar_elim.Visible = false;
         lbl_usuario.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
     }
 
@@ -68,28 +67,10 @@ public partial class ver_novedades : System.Web.UI.Page
 
     protected void bt_can_elim_Click(object sender, EventArgs e)
     {
-        confirmar_elim.Visible = false;
+        
         GridView1.Focus();
     }
-
-    protected void bt_elim_conf_Click(object sender, EventArgs e)
-    {
-        GridViewRow row;
-        row = GridView1.SelectedRow;
-        if (row==null)
-        {
-            Label1.Text = "Debe seleccionar una fila antes de eliminar";
-            Label1.Visible = true;
-        }
-        else
-        {
-            lbl_confirmar_elim.Text = "¿Esta seguro que desea eliminar la Novedad seleccionada?";
-            confirmar_elim.Visible = true;
-            bt_canc_elmin.Focus();
-        }
-
-    }
-
+    
     protected void salir_click(object sender, EventArgs e)
     {
         FormsAuthentication.SignOut();
@@ -97,4 +78,42 @@ public partial class ver_novedades : System.Web.UI.Page
     }
 
 
+
+    protected void bt_nueva_Click(object sender, EventArgs e)
+    {
+
+        GridViewRow row;
+        row = GridView1.SelectedRow;
+        if (row == null)
+        {
+            Label1.Text = "Debe seleccionar una fila antes de eliminar";
+            Label1.Focus();
+            Label1.Visible = true;
+        }
+        else
+        {
+
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    String id = GridView1.SelectedRow.Cells[0].Text;
+                    SqlCommand cmd1 = new SqlCommand(
+                        "UPDATE Consultas set leido_cons=1 where id_cons='" + id + "'", con);
+                    cmd1.ExecuteNonQuery();
+                    GridView1.DataBind();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = ex.ToString();
+            }
+        }
+
+
+
+    }
 }

@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_noticias.aspx.cs" Inherits="ver_noticias" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_consultas_le.aspx.cs" Inherits="ver_consultas_le" %>
 
 
 
@@ -8,12 +7,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Ver Noticias</title>
+    <title>Ver Consultas Leidas</title>
      <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
     <link rel='stylesheet' href='https://bootswatch.com/flatly/bootstrap.min.css'/>
     <link href="estilos/StyleHome.css" rel="stylesheet" />
-        <!--hoja que contiene el estilo de la tabla (grid)-->
+    <!--hoja que contiene el estilo de la tabla (grid)-->
     <link href="estilos/StyleSheetTabla.css" rel="stylesheet" />
+    
 
 </head>
 <body>
@@ -79,7 +79,7 @@
         <div class="container-fluid main">
           
           
-          <h1 class="page-header">Noticias publicadas</h1>
+          <h1 class="page-header">Ver Consultas Leidas</h1>
           
             <div>
 
@@ -97,17 +97,17 @@
 				<div class="panel-body" id="chartFatturazioneMensile">
                     
           
-                <asp:Label ID="lbl_eliminar" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
+                <asp:Label ID="lbl_error" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
                     
           
-                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" DataKeyNames="id_not" DataSourceID="DataSourceNoticias" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataSourceID="SqlDataSource1" style="width: auto">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="id_not" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_not" />
-                            <asp:BoundField DataField="categoria" HeaderText="CATEGORIA" SortExpression="categoria" />
-                            <asp:BoundField DataField="titulo_not" HeaderText="TITULO" SortExpression="titulo_not" />
-                            <asp:BoundField DataField="copete_not" HeaderText="COPETE" SortExpression="copete_not" />
-                            <asp:BoundField DataField="cuerpo_not" HeaderText="CUERPO" SortExpression="cuerpo_not" />
+                            <asp:BoundField DataField="id_cons" HeaderText="id_cons" InsertVisible="False" ReadOnly="True" SortExpression="id_cons" />
+                            <asp:BoundField DataField="nom_cons" HeaderText="nom_cons" SortExpression="nom_cons" />
+                            <asp:BoundField DataField="correo_cons" HeaderText="correo_cons" SortExpression="correo_cons" />
+                            <asp:BoundField DataField="cuerpo_cons" HeaderText="cuerpo_cons" SortExpression="cuerpo_cons" />
+                            <asp:BoundField DataField="fecha_cons" HeaderText="fecha_cons" SortExpression="fecha_cons" />
                             <asp:CommandField ShowSelectButton="True" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
@@ -123,16 +123,37 @@
                     </asp:GridView>
 
 
-				    <asp:SqlDataSource ID="DataSourceNoticias" runat="server" ConnectionString="<%$ ConnectionStrings:conexion_fsa %>" SelectCommand="SELECT [id_not], [categoria], [titulo_not], [copete_not], [cuerpo_not] FROM [Noticias]"></asp:SqlDataSource>
+
+
+
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:conexion_fsa %>" SelectCommand="SELECT [id_cons], [nom_cons], [correo_cons], [cuerpo_cons], [fecha_cons] FROM [Consultas] where [leido_cons]=@leido">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="1" Name="leido" Type="Byte" />
+                        </SelectParameters>
+
+                    </asp:SqlDataSource>
+
+
                     <br />
-                    <asp:Button ID="bt_modificar" class="btn btn-default" runat="server" Text="Modificar" OnClick="bt_modificar_Click" />
+                    <asp:Button ID="bt_modificar" class="btn btn-default" runat="server" Text="Marcar No Leida" OnClick="bt_modificar_Click" />
                     &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="bt_eliminar" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_eliminar_Click" />
+                    <asp:Button ID="bt_eliminar" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_elim_conf_Click" />
                     &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="bt_nueva" class="btn btn-primary" runat="server" Text="Nueva noticia" PostBackUrl="~/nueva_noticia.aspx" />
                     <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 <!-- HASTA AQUI LOS CONTROLES -->
+			    <br />
+                <br />
+                <div class="panel panel-default" id="confirmar_elim" runat="server">
+
+                <asp:Label ID="lbl_confirmar_elim" runat="server" Text="Label de confirmacion" CssClass="form-control"></asp:Label>
+                <br />
+<asp:Button ID="bt_conf_elim" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_eliminar_Click" />
+                    <asp:Button ID="bt_canc_elmin" class="btn btn-default" runat="server" Text="Cancelar" OnClick="bt_can_elim_Click" />
+                    
+                    <br />
+
+                </div>
 			</div>
 		</div>
 
@@ -154,21 +175,10 @@
       <div class="modal-body">
         </div>
 
-        <div class="form-group">
-          <label for="form-cliente-pagina">Pagina</label>
-          <select class="form-control" id="form-cliente-pagina">
-            <option>Home</option>
-            <option>Locali</option>
-          </select>
-        </div>
                           
 
 
-       </form>
-        
-        
-        
-        
+   
       </div>
       <div class="modal-footer">
       </div>

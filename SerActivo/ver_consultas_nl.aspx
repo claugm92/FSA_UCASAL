@@ -1,17 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_noticias.aspx.cs" Inherits="ver_noticias" %>
-
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_consultas_nl.aspx.cs" Inherits="ver_consultas_nl" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Ver Noticias</title>
+    <title>Ver Consultas No Leidas</title>
      <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
     <link rel='stylesheet' href='https://bootswatch.com/flatly/bootstrap.min.css'/>
     <link href="estilos/StyleHome.css" rel="stylesheet" />
+
         <!--hoja que contiene el estilo de la tabla (grid)-->
     <link href="estilos/StyleSheetTabla.css" rel="stylesheet" />
 
@@ -51,7 +49,6 @@
                     <div class="hamburger is-closed" data-toggle="offcanvas">
                         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                     </div>
-
                     <ul class="nav nav-sidebar">
 
                         <li><a role="button" href="#collapse-locali" data-toggle="collapse" data-parent="#accordion">Noticias</a></li>
@@ -79,7 +76,7 @@
         <div class="container-fluid main">
           
           
-          <h1 class="page-header">Noticias publicadas</h1>
+          <h1 class="page-header">Ver Consultas No Leidas</h1>
           
             <div>
 
@@ -97,17 +94,17 @@
 				<div class="panel-body" id="chartFatturazioneMensile">
                     
           
-                <asp:Label ID="lbl_eliminar" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
-                    
+                <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
+                
           
-                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" DataKeyNames="id_not" DataSourceID="DataSourceNoticias" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:BoundField DataField="id_not" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_not" />
-                            <asp:BoundField DataField="categoria" HeaderText="CATEGORIA" SortExpression="categoria" />
-                            <asp:BoundField DataField="titulo_not" HeaderText="TITULO" SortExpression="titulo_not" />
-                            <asp:BoundField DataField="copete_not" HeaderText="COPETE" SortExpression="copete_not" />
-                            <asp:BoundField DataField="cuerpo_not" HeaderText="CUERPO" SortExpression="cuerpo_not" />
+                            <asp:BoundField DataField="id_cons" HeaderText="id_cons" InsertVisible="False" ReadOnly="True" SortExpression="id_cons" />
+                            <asp:BoundField DataField="nom_cons" HeaderText="nom_cons" SortExpression="nom_cons" />
+                            <asp:BoundField DataField="cuerpo_cons" HeaderText="cuerpo_cons" SortExpression="cuerpo_cons" />
+                            <asp:BoundField DataField="correo_cons" HeaderText="correo_cons" SortExpression="correo_cons" />
+                            <asp:BoundField DataField="fecha_cons" HeaderText="fecha_cons" SortExpression="fecha_cons" />
                             <asp:CommandField ShowSelectButton="True" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
@@ -123,21 +120,22 @@
                     </asp:GridView>
 
 
-				    <asp:SqlDataSource ID="DataSourceNoticias" runat="server" ConnectionString="<%$ ConnectionStrings:conexion_fsa %>" SelectCommand="SELECT [id_not], [categoria], [titulo_not], [copete_not], [cuerpo_not] FROM [Noticias]"></asp:SqlDataSource>
+				    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:conexion_fsa %>" SelectCommand="SELECT [id_cons], [nom_cons], [cuerpo_cons], [correo_cons], [fecha_cons] FROM [Consultas]where [leido_cons]=@leido">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="0" Name="leido" Type="Byte" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+
                     <br />
-                    <asp:Button ID="bt_modificar" class="btn btn-default" runat="server" Text="Modificar" OnClick="bt_modificar_Click" />
-                    &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="bt_eliminar" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_eliminar_Click" />
-                    &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="bt_nueva" class="btn btn-primary" runat="server" Text="Nueva noticia" PostBackUrl="~/nueva_noticia.aspx" />
-                    <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <asp:Button ID="bt_nueva" class="btn btn-primary" runat="server" Text="Marcar como leida" OnClick="bt_nueva_Click" />
+                    </div>
+                
                 <!-- HASTA AQUI LOS CONTROLES -->
 			</div>
 		</div>
 
             </div>
-          </div>          
+          </div>
             
         </div>
         
@@ -148,35 +146,16 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;e">&times;</span></button>
         <h4 class="modal-title">Aggiungi elemento</h4>
       </div>
       <div class="modal-body">
         </div>
 
-        <div class="form-group">
-          <label for="form-cliente-pagina">Pagina</label>
-          <select class="form-control" id="form-cliente-pagina">
-            <option>Home</option>
-            <option>Locali</option>
-          </select>
-        </div>
                           
 
 
-       </form>
-        
-        
-        
-        
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
-    </form>
-    <!-- /.modal -->
+   
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js'></script>
