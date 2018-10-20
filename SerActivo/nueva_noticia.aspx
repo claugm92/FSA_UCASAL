@@ -93,8 +93,8 @@
                                         <asp:Label ID="lbl_error" runat="server" Text="Label" Visible="False"></asp:Label>
                                         <!-- Titulo-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="txt_titulo">Título</label>                                            
-                                                <asp:TextBox ID="txt_titulo" name="txt_titulo" class="form-control input-md" runat="server"></asp:TextBox>
+                                            <label class="col-md-4 control-label" for="txt_titulo">Título de noticia</label>                                            
+                                                <asp:TextBox ID="txt_titulo" name="txt_titulo" class="form-control input-md" runat="server" MaxLength="100"></asp:TextBox>
                                                 <span class="help-block">
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar un título" ControlToValidate="txt_titulo" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </span>
@@ -102,9 +102,9 @@
 
                                                 <!-- Copete-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="txt_copete">Copete</label>
+                                            <label class="col-md-4 control-label" for="txt_copete">Copete de noticia</label>
                                             
-                                                <asp:TextBox ID="txt_copete" name="txt_copete" class="form-control input-md" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txt_copete" name="txt_copete" class="form-control input-md" runat="server" MaxLength="200"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar un copete" ControlToValidate="txt_copete" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <span class="help-block"></span>
                                             
@@ -114,9 +114,9 @@
                                         <!-- Cuerpo -->
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="txt_cuerpo">Cuerpo</label>
+                                            <label class="col-md-4 control-label" for="txt_cuerpo">Cuerpo de noticia</label>
                                             
-                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine" Height="170px"></asp:TextBox>
+                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine" Height="170px" MaxLength="1500"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar el texto del cuerpo" ControlToValidate="txt_cuerpo" ForeColor="Red"></asp:RequiredFieldValidator>
                                             
                                         </div>
@@ -125,7 +125,7 @@
 
                                         <!-- Autor-->
                                         
-                                        <label class="col-md-4 control-label" for="txt_autor">Autor</label>
+                                        <label class="col-md-4 control-label" for="txt_autor">Creador de noticia</label>
                                                <!-- corregir el css, el deshabilitado pierde el formato-->
                                             <asp:TextBox ID="txt_autor" name="txt_autor" class="form-control" runat="server" Enabled="False" CssClass="form-control"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe ingresar un autor" ControlToValidate="txt_autor" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -136,7 +136,7 @@
 
                                         <!-- Fecha de registro-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="fr_txt">Fecha de registro</label>
+                                            <label class="col-md-4 control-label" for="fr_txt">Fecha de creacion de noticia</label>
                                             
                                                 <asp:TextBox ID="fr_text" name="fr_text" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="SingleLine" CssClass="form-control" Enabled="False"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Debe seleccionar una fecha de registro" ControlToValidate="fr_text" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -156,7 +156,7 @@
 
                                         <!-- File Button -->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="btnUpload">Subir foto</label>
+                                            <label class="col-md-4 control-label" for="btnUpload">Subir imagen de noticia</label>
                                             
                                                 <asp:FileUpload ID="img01" runat="server" CssClass="form-control" />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="img01" ErrorMessage="Debe seleccionar una imagen" ForeColor="Red"></asp:RequiredFieldValidator>

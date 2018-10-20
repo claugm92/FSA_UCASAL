@@ -108,7 +108,7 @@ public partial class SerActivo : System.Web.UI.Page
                 String cuerpo = tb_cuerpo.Text;
 
                 con.Open();
-                SqlCommand cmd = new SqlCommand("insert into Consultas(nom_cons, correo_cons, cuerpo_cons, leido_cons) values('" + nombre + "', '" + correo + "', '" + cuerpo + "', '')", con);
+                SqlCommand cmd = new SqlCommand("insert into Consultas(nom_cons, correo_cons, cuerpo_cons, asunto_cons) values('" + nombre + "', '" + correo + "', '" + cuerpo + "', '"+ asunto + "')", con);
                 //ejecuto consulta
                 cmd.ExecuteNonQuery();
                 //pongo en blanco los controles
@@ -120,14 +120,11 @@ public partial class SerActivo : System.Web.UI.Page
 
             }
         }
-        catch
+        catch(Exception ex)
         {
+            //tb_nombre.Text = ex.ToString();
             Response.Redirect("Error.aspx");
-        }
-
-
-
-    
+        }    
     }
 }
 

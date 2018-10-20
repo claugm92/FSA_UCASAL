@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SerActivo"
   ],
-  "SelectedNode": "\\SerActivo.sln",
+  "SelectedNode": "\\SerActivo\\modificar_actividad.aspx.cs",
   "PreviewInSolutionExplorer": false
 }

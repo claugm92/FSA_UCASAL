@@ -94,7 +94,7 @@
                                         <!-- Titulo-->
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_titulo">Título</label>                                            
-                                                <asp:TextBox ID="txt_titulo" name="txt_titulo" class="form-control input-md" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txt_titulo" name="txt_titulo" class="form-control input-md" runat="server" MaxLength="100"></asp:TextBox>
                                                 <span class="help-block">
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar un título" ControlToValidate="txt_titulo" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 </span>
@@ -104,7 +104,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_copete">Subtitulo</label>
                                             
-                                                <asp:TextBox ID="txt_copete" name="txt_copete" class="form-control input-md" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txt_copete" name="txt_copete" class="form-control input-md" runat="server" MaxLength="200"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar un copete" ControlToValidate="txt_copete" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <span class="help-block"></span>
                                             
@@ -116,7 +116,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_cuerpo">Cuerpo</label>
                                             
-                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                                <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine" MaxLength="1500"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar el texto del cuerpo" ControlToValidate="txt_cuerpo" ForeColor="Red"></asp:RequiredFieldValidator>
                                             
                                         </div>
@@ -127,7 +127,7 @@
                                         
                                         <label class="col-md-4 control-label" for="txt_autor">Autor</label>
                                                <!-- corregir el css, el deshabilitado pierde el formato-->
-                                            <asp:TextBox ID="txt_autor" name="txt_autor" class="form-control" runat="server" Enabled="False" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="txt_autor" name="txt_autor" class="form-control" runat="server" Enabled="False" CssClass="form-control" MaxLength="20"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe ingresar un autor" ControlToValidate="txt_autor" ForeColor="Red"></asp:RequiredFieldValidator>
                                             <span class="help-block"></span>
                                         
@@ -192,58 +192,6 @@
             </div>
         </div>
 
-        <div class="modal fade" tabindex="-1" role="dialog" id="modal-aggiungi-elemento">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Aggiungi elemento</h4>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form-cliente-pagina">Pagina</label>
-                        <select class="form-control" id="form-cliente-pagina">
-                            <option>Home</option>
-                            <option>Locali</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form-cliente-posizione">Posizione</label>
-                        <select class="form-control" id="form-cliente-posizione">
-                            <option>navbar-top</option>
-                            <option>footer-center</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form-cliente-dtinizio">Data inizio</label>
-                        <input type="date" class="form-control" id="form-cliente-dtinizio"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form-cliente-dtfine">Data fine</label>
-                        <input type="date" class="form-control" id="form-cliente-dtfine"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="form-cliente-allegato">Allegati</label>
-                        <input type="file" id="form-cliente-allegato"/>
-                        <p class="help-block">Caricare gli allegati.</p>
-                    </div>
-    </form>
-
-    </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="form-aggiungi-elemento-save">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-    </div>
-    </form>
-    <!-- /.modal -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js'></script>

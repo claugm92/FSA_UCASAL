@@ -51,6 +51,7 @@ public partial class modificar_noticia : System.Web.UI.Page
                     txt_cuerpo.Text = dr["cuerpo_not"].ToString();
                     txt_copete.Text = dr["copete_not"].ToString();
                     txt_fecha_pub.Text = dr["fecha_not"].ToString();
+                    fr_text.Text= dr["fecha_alta"].ToString();
 
                     //llenado dropdownlist
                     foreach (ListItem item in drop_cat.Items)

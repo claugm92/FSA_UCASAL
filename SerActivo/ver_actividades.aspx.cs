@@ -22,10 +22,10 @@ public partial class ver_actividades : System.Web.UI.Page
         {
             row = GridView1.SelectedRow;
             //Completa la url con el id del grid que esta en la columna 0
-            Response.Redirect("modificar_noticia.aspx?id_noticia=" + GridView1.SelectedRow.Cells[0].Text);
+            Response.Redirect("modificar_actividad.aspx?id_actividad=" + GridView1.SelectedRow.Cells[0].Text);
 
         }
-        catch (Exception ex)
+        catch
         {
             Label1.Text = "Debe seleccionar una fila antes de continuar";
             Label1.Visible = true;
@@ -52,10 +52,9 @@ public partial class ver_actividades : System.Web.UI.Page
                 GridView1.DataBind();
 
             }
-            Response.Redirect("Login.aspx");
 
         }
-        catch (Exception ex)
+        catch
         {
             Label1.Text = "Debe seleccionar una fila para eliminar!";
             Label1.Visible = true;

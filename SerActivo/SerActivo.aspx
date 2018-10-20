@@ -389,22 +389,22 @@
                 <form class="w3-container" action="/action_page.php" target="_blank">
                     <div class="w3-section">
                         <label>Nombre</label>
-                        <asp:TextBox ID="tb_nombre" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required></asp:TextBox>
+                        <asp:TextBox ID="tb_nombre" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required MaxLength="100"></asp:TextBox>
 
                     </div>
                     <div class="w3-section">
                         <label>Correo electrónico</label>
-                        <asp:TextBox ID="tb_correo" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required></asp:TextBox>
+                        <asp:TextBox ID="tb_correo" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required MaxLength="100"></asp:TextBox>
 
                     </div>
                     <div class="w3-section">
                         <label>Asunto</label>
-                        <asp:TextBox ID="tb_asunto" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required></asp:TextBox>
+                        <asp:TextBox ID="tb_asunto" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required MaxLength="100"></asp:TextBox>
 
                     </div>
                     <div class="w3-section">
                         <label>Cuerpo del mensaje</label>
-                        <asp:TextBox ID="tb_cuerpo" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required></asp:TextBox>
+                        <asp:TextBox ID="tb_cuerpo" runat="server" class="w3-input w3-border w3-hover-border-black" Style="width: 100%;" required MaxLength="1500"></asp:TextBox>
 
                     </div>
                     <asp:Button ID="Button1" runat="server" class="w3-button w3-block w3-black" OnClick="Button1_Click" Text="Enviar consulta" />

@@ -83,7 +83,7 @@
             <div class="container-fluid main">
 
 
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Modificar Noticia</h1>
 
                 <div>
                     <asp:Label ID="lbl_error" runat="server" Text="Label"></asp:Label>
@@ -103,7 +103,7 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="txt_titulo">Título</label>
+                                            <label class="col-md-4 control-label" for="txt_titulo">Título de noticia</label>
 
                                             <asp:TextBox ID="txt_titulo" name="txt_titulo" class="form-control input-md" runat="server"></asp:TextBox>
                                             <span class="help-block">
@@ -116,7 +116,7 @@
 
                                         <!-- Textarea -->
 
-                                        <label class="col-md-4 control-label" for="txt_autor">Autor</label>
+                                        <label class="col-md-4 control-label" for="txt_autor">Autor de noticia</label>
 
                                         <asp:TextBox ID="txt_autor" name="txt_autor" class="form-control input-md" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe ingresar un autor" ControlToValidate="txt_autor" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -126,7 +126,7 @@
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="txt_copete">Copete</label>
+                                            <label class="col-md-4 control-label" for="txt_copete">Copete de noticia</label>
 
                                             <asp:TextBox ID="txt_copete" name="txt_copete" class="form-control input-md" runat="server"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar un copete" ControlToValidate="txt_copete" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -136,7 +136,7 @@
 
                                         <!-- Text tarea-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="txt_cuerpo">Cuerpo</label>
+                                            <label class="col-md-4 control-label" for="txt_cuerpo">Cuerpo de noticia</label>
 
                                             <asp:TextBox ID="txt_cuerpo" name="txt_cuerpo" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="MultiLine"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar el texto del cuerpo" ControlToValidate="txt_cuerpo" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -145,16 +145,14 @@
 
                                         <!-- Text input-->
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="fr_txt">Fecha de registro</label>
-
-                                            <asp:TextBox ID="fr_text" name="fr_text" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="Date"></asp:TextBox>
+                                            <label class="col-md-4 control-label" for="fr_txt">Fecha de creacion de noticia</label><asp:TextBox ID="fr_text" name="fr_text" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="Date" CssClass="form-control" Enabled="False"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Debe seleccionar una fecha de registro" ControlToValidate="fr_text" ForeColor="Red"></asp:RequiredFieldValidator>
                                             <span class="help-block"></span>
 
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-4 control-label" for="fp_txt">Fecha de Publicación</label>
+                                            <label class="col-md-4 control-label" for="fp_txt">Fecha de noticia</label>
 
                                             <asp:TextBox ID="txt_fecha_pub" name="fp_text" type="text" placeholder="" class="form-control input-md" runat="server" TextMode="Date"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Debe seleccionar fecha de publicación" ControlToValidate="txt_fecha_pub" ForeColor="Red"></asp:RequiredFieldValidator>
