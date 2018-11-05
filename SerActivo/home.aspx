@@ -28,7 +28,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="SerActivo.aspx">ir a Ser Activo</a></li>
-                            <li><a href="home.aspx">
+                            <li><a href="ver_usuarios.aspx">
                                 <asp:Label ID="lbl_usuario" runat="server" Text="Label" /></a></li>
                              <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="salir_click">Cerrar Sesión</asp:LinkButton></li>
                         </ul>

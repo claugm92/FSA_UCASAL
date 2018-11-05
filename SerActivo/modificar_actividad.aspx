@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Modificar Noticia</title>
+    <title>Modificar Actividad</title>
     <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
     <link rel='stylesheet' href='https://bootswatch.com/flatly/bootstrap.min.css' />
     <link href="estilos/StyleHome.css" rel="stylesheet" />
@@ -36,7 +36,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="SerActivo.aspx">ir a Ser Activo</a></li>
-                            <li><a href="home.aspx">
+                            <li><a href="ver_usuarios.aspx">
                                 <asp:Label ID="lbl_usuario" runat="server" Text="Label" /></a></li>
                              <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="salir_click">Cerrar Sesión</asp:LinkButton></li>
                         </ul>
@@ -86,7 +86,7 @@
                 <h1 class="page-header">Modificar Actividad</h1>
 
                 <div>
-                    <asp:Label ID="lbl_error" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lbl_error" runat="server" Text="Label" ForeColor="Red"></asp:Label>
 
                     <!-- Text input-->
                     <div id="adminPage">
@@ -99,9 +99,6 @@
                                 <div class="panel panel-default">
                                     <!-- AQUI SE COLAN LOS CONTROLES -->
                                     <div class="panel-body" id="chartFatturazioneMensile">
-
-
-
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="txt_titulo">Título de actividad</label>
 

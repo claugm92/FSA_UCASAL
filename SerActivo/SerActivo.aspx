@@ -90,15 +90,14 @@
                 <a href="#actividades" class="w3-bar-item w3-button w3-wide">Actividades</a>
                 <a href="#contact" class="w3-bar-item w3-button w3-wide">Contactanos</a>
             </div>
-            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
+            <!-- Oculta los enlaces flotantes de la derecha -->
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
                 <i class="fa fa-bars"></i>
             </a>
         </div>
     </div>
 
-    <!-- Sidebar on small screens when clicking the menu icon -->
+    <!-- Pantalla lateral que se abre al hacer click en el menu -->
     <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: none" id="mySidebar">
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
         <a href="#" class="w3-bar-item w3-button w3-wide" onclick="w3_close()">Inicio</a>
@@ -109,44 +108,19 @@
     <!-- Formulario principal -->
     <form id="form1" runat="server">
         <!-- Carrusel de noticias principal -->
-        <!-- Slideshow -->
-
-
         <br />
         <br />
-
         <div class="w3-container">
 
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <%-- Indicators--%>
                 <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <asp:Repeater ID="rptrImages" runat="server">
                         <ItemTemplate>
                             <div class="item <%#GetActiveClass(Container.ItemIndex) %>">
-                                <!-- Post-->
                                 <div class="post-module">
-                                    <!-- Thumbnail-->
                                     <img src="Images/<%#Eval("nombre") %><%#Eval("Extension") %>" alt="<%#Eval("nombre") %>" alt="Girl Hat" style="width: 100%" class="w3-padding-16" />
-
-                                    <!-- Post Content-->
-                                    <div class="post-content">
-                                        <div class="category">
-                                            <asp:Label runat="server" ID="Label6" Text='<%# Eval("categoria") %>' />
-                                        </div>
-
-                                        <h1 class="title">
-                                            <asp:Label runat="server" ID="Label1" Text='<%# Eval("titulo_nov") %>' Font-Bold="True" Font-Size="X-Large" /></h1>
-                                        <h2 class="sub_title">
-                                            <asp:Label runat="server" ID="Label2" Text='<%# Eval("copete_nov") %>' /></h2>
-                                    </div>
                                 </div>
                             </div>
                         </ItemTemplate>
@@ -165,10 +139,9 @@
 
 
 
-        <!-- w3-content defines a container for fixed size centered content, 
-    and is wrapped around the whole page content, except for the footer in this example -->
+        <!-- Contenedor principal -->
         <div class="w3-content" style="max-width: 1400px">
-            <!-- Grid -->
+            <!-- cuadricula -->
             <div class="w3-row">
                 <div class="w3-center w3-padding-64" id="noticias">
                     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Noticias</span>
@@ -177,7 +150,7 @@
                 <div class="w3-col l8 s12">
                     <asp:Repeater ID="Repeater2" runat="server">
                         <ItemTemplate>
-                            <!-- Blog entry -->
+                            <!-- Entrada de noticia -->
                             <div class="w3-container w3-white w3-margin w3-padding-large">
                                 <div class="w3-justify">
                                     <h3>
@@ -190,30 +163,12 @@
                                     <span class="w3-opacity">
                                         <asp:Label runat="server" ID="Label5" Text='<%# Eval("fecha_not") %>' /></span></h5>
                                 </div>
-
                                 <div class="w3-justify">
-                                    <img src="Images/<%#Eval("nombre") %><%#Eval("Extension") %>" alt="<%#Eval("nombre") %>" alt="Girl Hat" style="width: 100%" class="w3-padding-16" />
+                                    <img src="Images/<%#Eval("nombre") %><%#Eval("Extension") %>" alt="<%#Eval("nombre") %>" style="width: 100%" class="w3-padding-16" />
                                     <h5>
                                         <asp:Label class="sub_title" runat="server" ID="Label3" Text='<%# Eval("copete_not") %>' /></h2>
-
                                     <p>
                                         <asp:Label runat="server" ID="Label4" Text='<%# Eval("cuerpo_not") %>' />
-
-
-                                        <p class="w3-right">
-
-                                            <p class="w3-clear">
-                                            </p>
-                                            <div class="w3-row w3-margin-bottom" id="demo1" style="display: none">
-                                                <hr>
-                                                <div class="w3-col l2 m3">
-                                                    <img src="/w3images/avatar_smoke.jpg" style="width: 90px;">
-                                                </div>
-                                                <div class="w3-col l10 m9">
-                                                    <h4>George <span class="w3-opacity w3-medium">May 3, 2015, 6:32 PM</span></h4>
-                                                    <p>Great blog post! Following</p>
-                                                </div>
-                                            </div>
                                 </div>
                             </div>
                             <hr>
@@ -222,10 +177,8 @@
                 </div>
 
 
-                <!-- INTRODUCCION menu -->
+                <!-- INTRODUCCION -->
                 <div class="w3-col l4">
-
-
                     <!-- Aplicaciones -->
                     <div class="w3-card w3-margin">
                         <div class="w3-container w3-padding">
@@ -261,7 +214,7 @@
                     </div>
                     <hr />
 
-                    <!-- Labels / tags -->
+                    <!-- Video/Informacion -->
                     <div class="w3-card w3-margin">
                         <div class="w3-container w3-padding">
                             <h4>Aprende a navegar por internet</h4>
@@ -273,13 +226,10 @@
                                 </video>
                             </p>
                         </div>
-                    </div>
-                    <!-- END Introduction Menu -->
+                    </div>                    
                 </div>
-                <!-- END GRID -->
             </div>
             <br />
-            <!-- END w3-content -->
         </div>
 
 
@@ -290,8 +240,7 @@
                 <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Actividades</span>
             </div>
         </div>
-        <!-- Grid -->
-        <!-- Target Elements -->
+        <!-- Cuadricula de actividades de la fundacion -->
         <div class="arlo arlo-loaded" style="position: relative;">
             <div class="arlo-filters-container">
                 <div id="filters">
@@ -331,7 +280,7 @@
                         </div>
                     </div>
 
-
+                    <!-- Repetidor -->
                     <asp:Repeater ID="Repeater3" runat="server">
                         <ItemTemplate>
                             <script type="application/ld+json">{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://s.codepen.io/course-template/?eventtemplate=1-plan-your-next-trip-to-the-moon&event=532"},{"@type":"ListItem","position":2,"url":"https://s.codepen.io/course-template/?eventtemplate=2-your-elusive-creative-genius&event=244"},{"@type":"ListItem","position":3,"url":"https://s.codepen.io/course-template/?eventtemplate=3-empowering-your-people&event=52"},{"@type":"ListItem","position":4,"url":"https://s.codepen.io/course-template/?eventtemplate=4-business-skills-for-new-managers&event=55"},{"@type":"ListItem","position":5,"url":"https://s.codepen.io/course-template/?eventtemplate=5-%E5%86%99%E5%A5%BD%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6&event=245"},{"@type":"ListItem","position":6,"url":"https://s.codepen.io/course-template/?eventtemplate=6-building-your-brand&event=246"},{"@type":"ListItem","position":7,"url":"https://s.codepen.io/course-template/?eventtemplate=8-teaching-and-learning-for-unit-4-promoting-childrens-positive-behaviour-level-4-education-qualification&event=60"},{"@type":"ListItem","position":8,"url":"https://s.codepen.io/course-template/?eventtemplate=7-m%C4%81ori-artefacts-annual-forum&event=595"},{"@type":"ListItem","position":9,"url":"https://s.codepen.io/course-template/?eventtemplate=11-how-great-people-inspire-action&event=580"},{"@type":"ListItem","position":10,"url":"https://s.codepen.io/course-template/?eventtemplate=9-basic-conference&event=253"},{"@type":"ListItem","position":11,"url":"https://s.codepen.io/course-template/?eventtemplate=176-partner-conference&event=257"},{"@type":"ListItem","position":12,"url":"https://s.codepen.io/course-template/?eventtemplate=395-external-business-relations&event=601"}]}</script>
@@ -356,21 +305,12 @@
                                             <div class="arlo-name arlo-text-color-contrast">
                                                 <asp:Label runat="server" ID="Label1" Text='<%# Eval("titulo_act") %>' /></h1>
                                             </div>
-                                            <!--          
-                                    <div class="arlo-location arlo-text-color-contrast">
-                                    Online
-                                    </div>
-                                   -->
                                         </div>
                                     </div>
                                     <div class="arlo-event-card-back">
                                         <div class="arlo-summary arlo-text-color-contrast">
                                             <asp:Label runat="server" ID="Label4" Text='<%# Eval("cuerpo_act") %>' />
                                         </div>
-                                        <a class="arlo-event-register" href="https://websitetestdata.arlo.co/register?sgid=2ddcd4cf35ac46d99423167e8e04fc90">Register</a>
-                                        <span class="arlo-loadEventTemplateHiddenButtonContainer">
-                                            <div data-id="2q13ihvd" style="display: none;" class="arlo-subcontrol EventTemplate" id="subcontrol-2q13ihvd">View Template Details</div>
-                                        </span>
                                     </div>
                                 </div>
                         </ItemTemplate>
@@ -379,9 +319,9 @@
 
 
 
-            <!-- Content -->
+            <!-- Contenedor -->
             <div class="w3-content" style="max-width: 1100px; margin-top: 80px; margin-bottom: 80px">
-                <!-- Contact -->
+                <!-- Formulario de contacto -->
                 <div class="w3-center w3-padding-64" id="contact">
                     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contactanos</span>
                 </div>
@@ -413,10 +353,7 @@
         </div>
 
 
-
-
         <!-- Footer -->
-
         <footer class="w3-container w3-padding-32 w3-black w3-center">
             <a href="#" class="w3-button w3-light-gray w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>Volver arriba</a>
             <div class="w3-xlarge w3-section">
@@ -427,15 +364,14 @@
                 <i class="fa fa-twitter w3-hover-opacity"></i>
                 <i class="fa fa-linkedin w3-hover-opacity"></i>
             </div>
-            <p>Powered by <a href="#" title="CLAU (?" target="_blank" class="w3-hover-text-green">Clauditouu (?</a></p>
+            <p>Powered by <a href="#" title="JRML - Universidad Católica de SALTA - Facultad de Ingeniería" target="_blank" class="w3-hover-text-green">JRML - Universidad Católica de SALTA - Facultad de Ingeniería</a></p>
             <p><a href="Login.aspx" title="CLAU (?" target="_blank" class="w3-hover-text-green">Administrar</a></p>
-
         </footer>
 
 
 
 
-        <!-- Dependencies -->
+        <!-- Dependencias y scripts -->
         <script>(function ($, ElementQueries) {
                 document.addEventListener("arlojscontrolsloaded", function () {
                     var platformID = "websitetestdata.arlo.co"; // Change platformID to point at your own account

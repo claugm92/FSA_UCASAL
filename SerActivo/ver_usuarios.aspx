@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_consultas_le.aspx.cs" Inherits="ver_consultas_le" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ver_usuarios.aspx.cs" Inherits="ver_usuarios" %>
 
 
 
@@ -79,7 +79,8 @@
         <div class="container-fluid main">
           
           
-          <h1 class="page-header">Ver Consultas Leidas</h1>
+          <h1 class="page-header">
+              <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></h1>
           
             <div>
 
@@ -94,66 +95,102 @@
 		        <div class="auto-style1">
 			<div class="panel panel-default">
                <!-- AQUI SE COLAN LOS CONTROLES --> 
-				<div class="panel-body" id="chartFatturazioneMensile">
-                    
-          
-                <asp:Label ID="lbl_error" runat="server" Text="Label" ForeColor="Red" Visible="False"></asp:Label>
-                    
-          
-                    <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataSourceID="SqlDataSource1" style="width: auto">
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-                            <asp:BoundField DataField="id_cons" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_cons" />
-                            <asp:BoundField DataField="nom_cons" HeaderText="Nombre" SortExpression="nom_cons" />
-                            <asp:BoundField DataField="correo_cons" HeaderText="Correo" SortExpression="correo_cons" />
-                            <asp:BoundField DataField="cuerpo_cons" HeaderText="Cuerpo" SortExpression="cuerpo_cons" />
-                            <asp:BoundField DataField="fecha_cons" HeaderText="Fecha" SortExpression="fecha_cons" />
-                            <asp:CommandField ShowSelectButton="True" />
-                        </Columns>
-                        <EditRowStyle BackColor="#2461BF" />
-                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#EFF3FB" />
-                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                    </asp:GridView>
+				
 
+                <table>
+            <tr>
+                <td colspan="3">
+                    <asp:Label ID="Label2" runat="server" Text="DATOS PERSONALES DE LA CUENTA"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Nombre</td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="tb_nombre" runat="server" MaxLength="50" Enabled="False" Width="142px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Apellido</td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="tb_apellido" runat="server" MaxLength="50" Enabled="False" Width="220px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">DNI</td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="tb_dni" runat="server" MaxLength="50" Enabled="False"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Nick</td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="tb_nick" runat="server" MaxLength="20" Enabled="False" Width="145px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Contraseña</td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="tb_contraseña" runat="server" MaxLength="50" TextMode="Password" Enabled="false" Text="*************" Width="211px">*************</asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="bt_actualizar_contraseña0" runat="server" Text="CAMBIAR CONTRASEÑA" OnClick="bt_actualizar_contraseña0_Click" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="auto-style7" colspan="3">
+                    <asp:Label ID="lbl_error" runat="server" ForeColor="Red"></asp:Label>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="text-center" colspan="3">
+                    <asp:Button ID="bt_actualizar_contraseña1" runat="server" Text="NUEVO USUARIO" OnClick="nuevo_usuario" />
+                </td>
+            </tr>
+            </table>
+                <table class="cs-btn-full" id="tabla_contraseña" runat="server">
+            <tr>
+                <td colspan="3">
+                    <asp:Label ID="Label3" runat="server" Text="Para modificar su contraseña es necesario que ingrese la actual"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Contraseña Actual</td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="tb_contraseña0" runat="server" MaxLength="50" TextMode="Password" Width="134px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Contraseña Nueva</td>
+                <td>
+                    <asp:TextBox ID="tb_contraseña_nueva" runat="server" MaxLength="50" TextMode="Password" Width="136px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Re-ingrese Nueva Contraseña</td>
+                <td>
+                    <asp:TextBox ID="tb_contraseña_nueva_re" runat="server" MaxLength="50" TextMode="Password" Width="136px"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2" colspan="3">
+                    <asp:Button ID="bt_actualizar_contraseña" runat="server" Text="ACTUALIZAR" OnClick="bt_actualizar_contraseña_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="bt_cancelar_contr" runat="server" Text="CANCELAR" />
+                </td>
+            </tr>
+        </table>
 
-
-
-
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:conexion_fsa %>" SelectCommand="SELECT [id_cons], [nom_cons], [correo_cons], [cuerpo_cons], [fecha_cons] FROM [Consultas] where [leido_cons]=@leido">
-                        <SelectParameters>
-                            <asp:Parameter DefaultValue="1" Name="leido" Type="Byte" />
-                        </SelectParameters>
-
-                    </asp:SqlDataSource>
-
-
-                    <br />
-                    <asp:Button ID="bt_modificar" class="btn btn-default" runat="server" Text="Marcar No Leida" OnClick="bt_modificar_Click" />
-                    &nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="bt_eliminar" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_elim_conf_Click" />
-                    &nbsp;&nbsp;&nbsp;
-                    <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                <!-- HASTA AQUI LOS CONTROLES -->
-			    <br />
                 <br />
-                <div class="panel panel-default" id="confirmar_elim" runat="server">
-
-                <asp:Label ID="lbl_confirmar_elim" runat="server" Text="Label de confirmacion" CssClass="form-control"></asp:Label>
-                <br />
-<asp:Button ID="bt_conf_elim" class="btn btn-danger" runat="server" Text="Eliminar" OnClick="bt_eliminar_Click" />
-                    <asp:Button ID="bt_canc_elmin" class="btn btn-default" runat="server" Text="Cancelar" OnClick="bt_can_elim_Click" />
-                    
-                    <br />
-
-                </div>
+             
 			</div>
 		</div>
 

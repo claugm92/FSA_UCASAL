@@ -34,29 +34,25 @@ public partial class ver_actividades : System.Web.UI.Page
 
     protected void bt_eliminar_Click(object sender, EventArgs e)
     {
-        /*Falta la comprobacion esta seguro de eliminar?*/
         try
         {
-            string sql = @"delete from Actividades where ID=@id_act";
-
+            string sql = @"delete from Novedades where id_nov=@id_nov";
 
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString))
             {
-
                 conn.Open();
                 SqlCommand eliminar_act = new SqlCommand(sql, conn);
-                eliminar_act.Parameters.AddWithValue("@id_act", GridView1.SelectedRow.Cells[0].Text);
+                eliminar_act.Parameters.AddWithValue("@id_nov", GridView1.SelectedRow.Cells[0].Text);
                 eliminar_act.ExecuteNonQuery();
-
                 conn.Close();
                 GridView1.DataBind();
-
             }
 
         }
-        catch
+        catch(Exception ex)
         {
-            Label1.Text = "Debe seleccionar una fila para eliminar!";
+            Label1.Text = ex.ToString();
+            //Label1.Text = "Debe seleccionar una fila para eliminar!";
             Label1.Visible = true;
         }
 

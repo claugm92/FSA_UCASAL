@@ -17,7 +17,6 @@ public partial class modificar_actividad : System.Web.UI.Page
         /*Metodo que llena los controles con el id que se obtiene*/
         cargar_controles();
         txt_autor.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
-
         lbl_usuario.Text = string.Format("{0}", Thread.CurrentPrincipal.Identity.Name);
     }
 
@@ -26,42 +25,36 @@ public partial class modificar_actividad : System.Web.UI.Page
     {
         /*obtengo el id de la url*/
         String id = Request.QueryString["id_actividad"];
-        
+        lbl_error.Visible = false;
         try
         {
+            //cadena de conexion 
             string sql = @"select * from Actividades where id_act=@id_actividad";
-
-
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion_fsa"].ConnectionString))
             {
-
                 conn.Open();
                 SqlCommand command = new SqlCommand(sql, conn);
                 SqlDataReader dr;
                 command.Parameters.AddWithValue("@id_actividad", id);
                 SqlDataAdapter dataAdaptador = new SqlDataAdapter(command);
-
                 dr = command.ExecuteReader();
                 /*Si obtuve datos en la consulta entonces cargo los controles*/
                 if (dr.Read())
                 {
                     //llenado de textboxes
                     txt_titulo.Text = dr["titulo_act"].ToString();
-
                     txt_cuerpo.Text = dr["cuerpo_act"].ToString();
                     txt_copete.Text = dr["subtitulo_act"].ToString();
                     txt_fecha_pub.Text = dr["fecha_act"].ToString();
-                    
-
                 }
-
                 conn.Close();
-
             }
         }
         catch (Exception ex)
         {
             lbl_error.Text = ex.ToString();
+            lbl_error.Visible = true;
+            Response.Redirect("error.aspx");
         }
 
     }
